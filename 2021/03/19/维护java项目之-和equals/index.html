@@ -9,7 +9,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    Tag: Java |  于北往南 Blog&#39;s
+    维护java项目之==和equals |  于北往南 Blog&#39;s
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -40,81 +40,215 @@
       
     <main class="content on">
       <section class="outer">
-  
-  
-  <article class="articles">
+  <article
+  id="post-维护java项目之-和equals"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
     
-    
-    <h1 class="page-type-title">#&nbspJava</h1>
-    
-    
-  
-  
-  
-  
-  
-  
-  <div class="archives-wrap">
-    <div class="archive-year-wrap">
-      <a href="/archives/2021" class="archive-year">2021</a>
-    </div>
-    <div class="archives">
-      
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/03/19/%E7%BB%B4%E6%8A%A4java%E9%A1%B9%E7%9B%AE%E4%B9%8B-%E5%92%8Cequals/" class="archive-article-date">
-  <time datetime="2021-03-19T01:54:38.000Z" itemprop="datePublished">03/19</time>
-</a>
+    <header class="article-header">
        
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2021/03/19/%E7%BB%B4%E6%8A%A4java%E9%A1%B9%E7%9B%AE%E4%B9%8B-%E5%92%8Cequals/"
-    >维护java项目之==和equals</a> 
-</h2>
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  维护java项目之==和equals
+</h1>
  
 
     </header>
-    
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
-
-    
+     
+    <div class="article-meta">
+      <a href="/2021/03/19/%E7%BB%B4%E6%8A%A4java%E9%A1%B9%E7%9B%AE%E4%B9%8B-%E5%92%8Cequals/" class="article-date">
+  <time datetime="2021-03-19T01:54:38.000Z" itemprop="datePublished">2021-03-19</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
   </div>
-</article>
-      
   
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/03/19/%E4%B8%80%E6%AC%BE%E6%99%BA%E8%83%BD%E7%9A%84%E6%97%A5%E6%9C%9F%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7/" class="archive-article-date">
-  <time datetime="2021-03-19T01:26:03.000Z" itemprop="datePublished">03/19</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2021/03/19/%E4%B8%80%E6%AC%BE%E6%99%BA%E8%83%BD%E7%9A%84%E6%97%A5%E6%9C%9F%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7/"
-    >一款智能的日期解析工具</a> 
-</h2>
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">212</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">1 分钟</span>
+        </span>
+    </span>
+</div>
  
-
-    </header>
-    
-    
+    </div>
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
+    <div class="tocbot"></div>
 
-    
-  </div>
-</article>
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p>最近发生一件很尴尬的事情，在维护一个Java项目的时候，发现有使用<code>==</code>来比较两个对象的属性，<br>于是顺手就把<code>==</code>改成了equals。悲剧发生……</p>
+<h2 id="和equals的区别"><a href="#和equals的区别" class="headerlink" title="==和equals的区别"></a><code>==</code>和equals的区别</h2><ul>
+<li><code>==</code>：值比较</li>
+<li>equals：引用比较，但一些类重写了equals方法，如String、Integer等，变成了值比较。<h2 id="使用equals的前提"><a href="#使用equals的前提" class="headerlink" title="使用equals的前提"></a>使用equals的前提</h2></li>
+<li>使用equals进行比较，如：</li>
+<li>a和b是两个对象<ul>
+<li>```<br>  a.getId().equals(b.getId())<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- 需要确保a.getId()不为null，因为null是没有.equals()方法的。</span><br><span class="line">## 各种对象使用equals</span><br><span class="line">- String类型：</span><br><span class="line">    - 可以使用StringUtils.equals()进行比较，该方法内置非空校验</span><br><span class="line">- 其余封装类型：</span><br><span class="line">    - 可以使用Objects.equals()进行比较，该方法内置非空校验</span><br><span class="line">- 使用三目运算符：</span><br><span class="line">    - &#96;&#96;&#96;</span><br><span class="line">       a.getId() &#x3D;&#x3D; null ? b.getId() &#x3D;&#x3D; null ? false : true : a.getId().equals(b.getId())</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+ 
+      <!-- reward -->
       
+      <div id="reword-out">
+        <div id="reward-btn">
+          打赏
+        </div>
+      </div>
       
     </div>
-  </div>
-  
-  
+    
 
-  
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://zhkaif.github.io/2021/03/19/%E7%BB%B4%E6%8A%A4java%E9%A1%B9%E7%9B%AE%E4%B9%8B-%E5%92%8Cequals/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2021/03/19/%E4%B8%80%E6%AC%BE%E6%99%BA%E8%83%BD%E7%9A%84%E6%97%A5%E6%9C%9F%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">一款智能的日期解析工具</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
 </section>
       <footer class="footer">
   <div class="outer">
@@ -262,6 +396,23 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
