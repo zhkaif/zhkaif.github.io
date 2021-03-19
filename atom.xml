@@ -6,7 +6,7 @@
   <link href="https://zhkaif.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhkaif.github.io/"/>
-  <updated>2021-03-19T01:55:11.825Z</updated>
+  <updated>2021-03-19T03:13:00.459Z</updated>
   <id>https://zhkaif.github.io/</id>
   
   <author>
@@ -15,6 +15,132 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C#之使用AutoUpdater自动更新客户端</title>
+    <link href="https://zhkaif.github.io/2021/03/19/C-%E4%B9%8B%E4%BD%BF%E7%94%A8AutoUpdater%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E5%AE%A2%E6%88%B7%E7%AB%AF/"/>
+    <id>https://zhkaif.github.io/2021/03/19/C-%E4%B9%8B%E4%BD%BF%E7%94%A8AutoUpdater%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E5%AE%A2%E6%88%B7%E7%AB%AF/</id>
+    <published>2021-03-19T03:11:06.000Z</published>
+    <updated>2021-03-19T03:13:00.459Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;安装NuGet包&quot;&gt;&lt;a href=&quot;#安装NuGet包&quot; class=&quot;headerlink&quot; title=&quot;安装NuGet包&quot;&gt;&lt;/a&gt;安装NuGet包&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;在Visio</summary>
+        
+      
+    
+    
+    
+    <category term="C#" scheme="https://zhkaif.github.io/categories/C/"/>
+    
+    
+    <category term="Winform" scheme="https://zhkaif.github.io/tags/Winform/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C#之使用CefSharp创建客户端</title>
+    <link href="https://zhkaif.github.io/2021/03/19/C-%E4%B9%8B%E4%BD%BF%E7%94%A8CefSharp%E5%88%9B%E5%BB%BA%E5%AE%A2%E6%88%B7%E7%AB%AF/"/>
+    <id>https://zhkaif.github.io/2021/03/19/C-%E4%B9%8B%E4%BD%BF%E7%94%A8CefSharp%E5%88%9B%E5%BB%BA%E5%AE%A2%E6%88%B7%E7%AB%AF/</id>
+    <published>2021-03-19T03:10:53.000Z</published>
+    <updated>2021-03-19T03:13:31.262Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;安装NuGet包&quot;&gt;&lt;a href=&quot;#安装NuGet包&quot; class=&quot;headerlink&quot; title=&quot;安装NuGet包&quot;&gt;&lt;/a&gt;安装NuGet包&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;在Visio</summary>
+        
+      
+    
+    
+    
+    <category term="C#" scheme="https://zhkaif.github.io/categories/C/"/>
+    
+    
+    <category term="Winform" scheme="https://zhkaif.github.io/tags/Winform/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C#之WinForm设置控件居中</title>
+    <link href="https://zhkaif.github.io/2021/03/19/C-%E4%B9%8BWinForm%E8%AE%BE%E7%BD%AE%E6%8E%A7%E4%BB%B6%E5%B1%85%E4%B8%AD/"/>
+    <id>https://zhkaif.github.io/2021/03/19/C-%E4%B9%8BWinForm%E8%AE%BE%E7%BD%AE%E6%8E%A7%E4%BB%B6%E5%B1%85%E4%B8%AD/</id>
+    <published>2021-03-19T03:10:36.000Z</published>
+    <updated>2021-03-19T03:12:16.793Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;简单阐述&quot;&gt;&lt;a href=&quot;#简单阐述&quot; class=&quot;headerlink&quot; title=&quot;简单阐述&quot;&gt;&lt;/a&gt;简单阐述&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;在C#的WinForm里面，原生控件是没有居中属性的，故通过重写OnResize(EventArgs</summary>
+        
+      
+    
+    
+    
+    <category term="C#" scheme="https://zhkaif.github.io/categories/C/"/>
+    
+    
+    <category term="Winform" scheme="https://zhkaif.github.io/tags/Winform/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring Batch学习笔记（一）</title>
+    <link href="https://zhkaif.github.io/2021/03/19/Spring-Batch%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>https://zhkaif.github.io/2021/03/19/Spring-Batch%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</id>
+    <published>2021-03-19T03:09:52.000Z</published>
+    <updated>2021-03-19T03:10:10.255Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;##Spring Batch简介&lt;br&gt;        Spring Batch提供了可重复使用的功能，用来处理大量数据。包括记录、跟踪，事务管理，作业处理统计，作业重启，跳过和资源管理。&lt;br&gt;   </summary>
+        
+      
+    
+    
+    
+    <category term="后端" scheme="https://zhkaif.github.io/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+    <category term="Java" scheme="https://zhkaif.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java类型转换工具类（持续更新）</title>
+    <link href="https://zhkaif.github.io/2021/03/19/Java%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7%E7%B1%BB%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/"/>
+    <id>https://zhkaif.github.io/2021/03/19/Java%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7%E7%B1%BB%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/</id>
+    <published>2021-03-19T03:08:23.000Z</published>
+    <updated>2021-03-19T03:08:50.948Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;##简介&lt;br&gt;    将项目中用到的类型转换做个记录。&lt;br&gt;##详细代码&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="后端" scheme="https://zhkaif.github.io/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+    <category term="Java" scheme="https://zhkaif.github.io/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>维护java项目之==和equals</title>
@@ -72,11 +198,23 @@
     <link href="https://zhkaif.github.io/2021/03/18/about/"/>
     <id>https://zhkaif.github.io/2021/03/18/about/</id>
     <published>2021-03-18T09:44:17.000Z</published>
-    <updated>2021-03-18T09:44:17.642Z</updated>
+    <updated>2021-03-19T03:21:33.915Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;张凯&quot;&gt;&lt;a href=&quot;#张凯&quot; class=&quot;headerlink&quot; title=&quot;张凯&quot;&gt;&lt;/a&gt;张凯&lt;/h2&gt;&lt;h2 id=&quot;个人信息&quot;&gt;&lt;a href=&quot;#个人信息&quot; class=&quot;headerlink&quot;</summary>
+        
+      
     
     
     
+    <category term="个人" scheme="https://zhkaif.github.io/categories/%E4%B8%AA%E4%BA%BA/"/>
     
+    
+    <category term="简历" scheme="https://zhkaif.github.io/tags/%E7%AE%80%E5%8E%86/"/>
     
   </entry>
   

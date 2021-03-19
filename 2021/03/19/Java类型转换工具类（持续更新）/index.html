@@ -9,7 +9,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    about |  于北往南 Blog&#39;s
+    Java类型转换工具类（持续更新） |  于北往南 Blog&#39;s
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -41,7 +41,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-about"
+  id="post-Java类型转换工具类（持续更新）"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -52,18 +52,18 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  about
+  Java类型转换工具类（持续更新）
 </h1>
  
 
     </header>
      
     <div class="article-meta">
-      <a href="/2021/03/18/about/" class="article-date">
-  <time datetime="2021-03-18T09:44:17.000Z" itemprop="datePublished">2021-03-18</time>
+      <a href="/2021/03/19/Java%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7%E7%B1%BB%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/" class="article-date">
+  <time datetime="2021-03-19T03:08:23.000Z" itemprop="datePublished">2021-03-19</time>
 </a> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E4%B8%AA%E4%BA%BA/">个人</a>
+    <a class="article-category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a>
   </div>
   
 <div class="word_count">
@@ -71,7 +71,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">22</span>
+            <span class="post-count">410</span>
         </span>
     </span>
 
@@ -80,22 +80,21 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">1 分钟</span>
+            <span class="post-count">2 分钟</span>
         </span>
     </span>
 </div>
  
     </div>
       
-    <div class="tocbot"></div>
-
 
 
 
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h2 id="张凯"><a href="#张凯" class="headerlink" title="张凯"></a>张凯</h2><h2 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h2><h2 id="教育经历"><a href="#教育经历" class="headerlink" title="教育经历"></a>教育经历</h2><h2 id="工作经历"><a href="#工作经历" class="headerlink" title="工作经历"></a>工作经历</h2><h2 id="项目经历"><a href="#项目经历" class="headerlink" title="项目经历"></a>项目经历</h2><h2 id="技能清单"><a href="#技能清单" class="headerlink" title="技能清单"></a>技能清单</h2> 
+  <p>##简介<br>    将项目中用到的类型转换做个记录。<br>##详细代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line">@Component</span><br><span class="line">public class TypeUtil &#123;</span><br><span class="line">	&#x2F;&#x2F; [start]字符串转各种格式</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 字符串转日期(格式:&quot;yyyyMMdd&quot;)</span><br><span class="line">	public static Date StrToDateFirst(String str) &#123;</span><br><span class="line">		DateFormat format &#x3D; new SimpleDateFormat(&quot;yyyyMMdd&quot;);</span><br><span class="line">		Date date &#x3D; null;</span><br><span class="line">		try &#123;</span><br><span class="line">			date &#x3D; format.parse(str);</span><br><span class="line">		&#125; catch (ParseException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return date;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 字符串转日期(格式:&quot;dd&#x2F;MM&#x2F;yyyy&quot;)</span><br><span class="line">	public static Date StrToDateSecond(String str) &#123;</span><br><span class="line">		DateFormat format &#x3D; new SimpleDateFormat(&quot;dd&#x2F;MM&#x2F;yyyy&quot;);</span><br><span class="line">		Date date &#x3D; null;</span><br><span class="line">		try &#123;</span><br><span class="line">			date &#x3D; format.parse(str);</span><br><span class="line">		&#125; catch (ParseException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return date;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 字符串转日期(格式:&quot;yyyy-MM-dd&quot;)</span><br><span class="line">	public static Date StrToDateThird(String str) &#123;</span><br><span class="line">		DateFormat format &#x3D; new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);</span><br><span class="line">		Date date &#x3D; null;</span><br><span class="line">		try &#123;</span><br><span class="line">			date &#x3D; format.parse(str);</span><br><span class="line">		&#125; catch (ParseException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return date;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 字符串转日期(格式:&quot;yyyy-MM-dd HH:mm:ss&quot;)</span><br><span class="line">	public static Date StrToDateFourth(String str) &#123;</span><br><span class="line">		DateFormat format &#x3D; new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);</span><br><span class="line">		Date date &#x3D; null;</span><br><span class="line">		try &#123;</span><br><span class="line">			date &#x3D; format.parse(str);</span><br><span class="line">		&#125; catch (ParseException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return date;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 字符串转Integer</span><br><span class="line">	public static Integer StrToInteger(String str) &#123;</span><br><span class="line">		Integer integer &#x3D; null;</span><br><span class="line">		try &#123;</span><br><span class="line">			integer &#x3D; Integer.valueOf(str);</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return integer;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 字符串转Double</span><br><span class="line">	public static Double StrToDouble(String str) &#123;</span><br><span class="line">		Double double1 &#x3D; 0.00;</span><br><span class="line">		try &#123;</span><br><span class="line">			double1 &#x3D; Double.parseDouble(str);</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return double1;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 字符串转时间戳</span><br><span class="line">	public static Timestamp StrToTimeStamp(String str) &#123;</span><br><span class="line">		Timestamp timestamp &#x3D; null;</span><br><span class="line">		try &#123;</span><br><span class="line">			timestamp &#x3D; Timestamp.valueOf(str);</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return timestamp;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 字符串转BigDecimal</span><br><span class="line">	public static BigDecimal StrTiBigdecimal(String str) &#123;</span><br><span class="line">		BigDecimal bigDecimal &#x3D; null;</span><br><span class="line">		try &#123;</span><br><span class="line">			bigDecimal &#x3D; new BigDecimal(str);</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return bigDecimal;</span><br><span class="line">	&#125;</span><br><span class="line">	&#x2F;&#x2F; [end]</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 
       <!-- reward -->
       
       <div id="reword-out">
@@ -165,12 +164,12 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://zhkaif.github.io/2021/03/18/about/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://zhkaif.github.io/2021/03/19/Java%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7%E7%B1%BB%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%80%E5%8E%86/" rel="tag">简历</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
 
     </footer>
   </div>
@@ -178,19 +177,19 @@
    
   <nav class="article-nav">
     
-      <a href="/2021/03/19/%E4%B8%80%E6%AC%BE%E6%99%BA%E8%83%BD%E7%9A%84%E6%97%A5%E6%9C%9F%E8%A7%A3%E6%9E%90%E5%B7%A5%E5%85%B7/" class="article-nav-link">
+      <a href="/2021/03/19/Spring-Batch%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            一款智能的日期解析工具
+            Spring Batch学习笔记（一）
           
         </div>
       </a>
     
     
-      <a href="/2021/03/18/Vue%E5%87%BD%E6%95%B0%E9%98%B2%E6%8A%96%E5%92%8C%E5%87%BD%E6%95%B0%E8%8A%82%E6%B5%81/" class="article-nav-link">
+      <a href="/2021/03/19/%E7%BB%B4%E6%8A%A4java%E9%A1%B9%E7%9B%AE%E4%B9%8B-%E5%92%8Cequals/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">Vue函数防抖和函数节流</div>
+        <div class="article-nav-title">维护java项目之==和equals</div>
       </a>
     
   </nav>

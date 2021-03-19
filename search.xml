@@ -1,6 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>C#之WinForm设置控件居中</title>
+    <url>/2021/03/19/C-%E4%B9%8BWinForm%E8%AE%BE%E7%BD%AE%E6%8E%A7%E4%BB%B6%E5%B1%85%E4%B8%AD/</url>
+    <content><![CDATA[<h2 id="简单阐述"><a href="#简单阐述" class="headerlink" title="简单阐述"></a>简单阐述</h2><pre><code>在C#的WinForm里面，原生控件是没有居中属性的，故通过重写OnResize(EventArgs e)方法，通过计算，重新定位控件位置。
+</code></pre>
+<h2 id="以Label控件为例"><a href="#以Label控件为例" class="headerlink" title="以Label控件为例"></a>以Label控件为例</h2><pre><code>(1)将label的AutoSize属性设置为false；Dock属性设置为fill；TextAlign属性设置为MiddleCenter。
+(2)重写居中的代码如下：
+</code></pre>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">protected override void OnResize(EventArgs e)</span><br><span class="line">        &#123;</span><br><span class="line">            base.OnResize(e);</span><br><span class="line">            int x &#x3D; (int)(0.5 * (this.Width - label1.Width));</span><br><span class="line">            int y &#x3D; label1.Location.Y;</span><br><span class="line">            label1.Location &#x3D; new System.Drawing.Point(x,y);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h2><p><a href="https://blog.csdn.net/mingyueyixi/article/details/55035935">https://blog.csdn.net/mingyueyixi/article/details/55035935</a></p>
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>Winform</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C#之使用AutoUpdater自动更新客户端</title>
+    <url>/2021/03/19/C-%E4%B9%8B%E4%BD%BF%E7%94%A8AutoUpdater%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E5%AE%A2%E6%88%B7%E7%AB%AF/</url>
+    <content><![CDATA[<h2 id="安装NuGet包"><a href="#安装NuGet包" class="headerlink" title="安装NuGet包"></a>安装NuGet包</h2><pre><code>在Visio studio中右击解决方案，选择管理NuGet包，搜索安装Autoupdater.NET.Official。
+</code></pre>
+<h2 id="工作简介"><a href="#工作简介" class="headerlink" title="工作简介"></a>工作简介</h2><pre><code>    从服务器下载包含更新文件的XML文件，从中获取软件的最新版本信息。如果软件的最新版本大于用户PC上安装的当前软件版本，则会向用户显示更新对话框。当然，也可以设置按钮事件进行点击下载更新文件。如果文件是压缩包，会自动将压缩包的内容解压缩到应用程序目录。
+</code></pre>
+<h2 id="XML文件"><a href="#XML文件" class="headerlink" title="XML文件"></a>XML文件</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;?xml version &#x3D; &quot;1.0&quot; encoding &#x3D; &quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt; item &gt;</span><br><span class="line">    &lt; version &gt; 2.0.0.0 &lt;&#x2F; version &gt;</span><br><span class="line">    &lt; url &gt; https:&#x2F;&#x2F;www.cnblogs.com&lt;&#x2F; url &gt;</span><br><span class="line">    &lt; changelog &gt; https:&#x2F;&#x2F;www.cnblogs.com &lt;&#x2F; changelog &gt;</span><br><span class="line">    &lt; mandatory &gt; false &lt;&#x2F; mandatory &gt;</span><br><span class="line">&lt;&#x2F; item &gt;</span><br></pre></td></tr></table></figure>
+<pre><code>如上所示：
+    version(必填)：格式为X.X.X.X的版本标记。
+    url(必填)：最新版本安装程序文件的url。
+    changelog(可选)：程序更改日志的url。    
+    mandatory(可选)：强制更新，将跳过信息和稍后更新按钮隐藏。
+选择使用以下代码将跳过update对话框，自动下载更新：
+</code></pre>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;mandatory mode&#x3D;&quot;2&quot;&gt;true&lt;&#x2F;mandatory&gt;</span><br></pre></td></tr></table></figure>
+<pre><code>    args(可选)：为安装提供命令行参数，参数可以包含%path%，用以替换正在执行的应用程序所在目录的路径。
+    checksum(可选)：更新文件的校验和，用以检验文件的完整性，algorithm属性指定算法，支持 MD5,SHA1,SHA256,SHA384,SHA512。
+</code></pre>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;checksum algorithm&#x3D;&quot;MD5&quot;&gt;Update file Checksum&lt;&#x2F;checksum&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="窗体代码"><a href="#窗体代码" class="headerlink" title="窗体代码"></a>窗体代码</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">using AutoUpdaterDotNET;</span><br><span class="line"></span><br><span class="line">private void button1_Click(object sender, EventArgs e)</span><br><span class="line">        &#123;</span><br><span class="line">            &#x2F;&#x2F;XML文件地址</span><br><span class="line">            AutoUpdater.Start(&quot;https:&#x2F;&#x2F;www.cnblogs.com&quot;);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h2><p><a href="https://github.com/ravibpatel/AutoUpdater.NET">https://github.com/ravibpatel/AutoUpdater.NET</a></p>
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>Winform</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C#之使用CefSharp创建客户端</title>
+    <url>/2021/03/19/C-%E4%B9%8B%E4%BD%BF%E7%94%A8CefSharp%E5%88%9B%E5%BB%BA%E5%AE%A2%E6%88%B7%E7%AB%AF/</url>
+    <content><![CDATA[<h2 id="安装NuGet包"><a href="#安装NuGet包" class="headerlink" title="安装NuGet包"></a>安装NuGet包</h2><pre><code>在Visio studio中右击解决方案，选择管理NuGet包，搜索安装CefSharp.WinForms。
+</code></pre>
+<h2 id="配置工作"><a href="#配置工作" class="headerlink" title="配置工作"></a>配置工作</h2><pre><code>(1)首先右击项目选择属性，在&quot;生成&quot;选项中将&quot;首选32位&quot;勾上。
+
+(2)其次在项目文件目录下找到&quot;项目名称.csproj&quot;文件，在第一个PropertyGroup中添加以下代码：
+</code></pre>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;CefSharpAnyCpuSupport&gt;true&lt;&#x2F;CefSharpAnyCpuSupport&gt;</span><br></pre></td></tr></table></figure>
+<pre><code>(3)最后修改App.config文件，和&lt;startup&gt;标签并列地位，添加以下代码：
+</code></pre>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;runtime&gt;</span><br><span class="line">    &lt;assemblyBinding xmlns&#x3D;&quot;urn:schemas-microsoft-com:asm.v1&quot;&gt;</span><br><span class="line">        &lt;probing privatePath&#x3D;&quot;x86&quot;&#x2F;&gt;</span><br><span class="line">    &lt;&#x2F;assemblyBinding&gt;</span><br><span class="line">&lt;&#x2F;runtime&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="窗体代码"><a href="#窗体代码" class="headerlink" title="窗体代码"></a>窗体代码</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Collections.Generic;</span><br><span class="line">using System.ComponentModel;</span><br><span class="line">using System.Data;</span><br><span class="line">using System.Drawing;</span><br><span class="line">using System.Linq;</span><br><span class="line">using System.Text;</span><br><span class="line">using System.Threading.Tasks;</span><br><span class="line">using System.Windows.Forms;</span><br><span class="line">using CefSharp;</span><br><span class="line">using CefSharp.WinForms;</span><br><span class="line"></span><br><span class="line">namespace embebbedChromium</span><br><span class="line">&#123;</span><br><span class="line">    public partial class Form1 : Form</span><br><span class="line">    &#123;</span><br><span class="line">        public ChromiumWebBrowser chromeBrowser;</span><br><span class="line"> </span><br><span class="line">        public Form1()</span><br><span class="line">        &#123;</span><br><span class="line">            InitializeComponent();</span><br><span class="line">            &#x2F;&#x2F; 初始化全局组件后启动浏览器</span><br><span class="line">            InitializeChromium();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        private void Form1_Load(object sender, EventArgs e)</span><br><span class="line">        &#123;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        public void InitializeChromium()</span><br><span class="line">        &#123;</span><br><span class="line">            CefSettings settings &#x3D; new CefSettings();</span><br><span class="line">            &#x2F;&#x2F;按照设置初始化cef</span><br><span class="line">            Cef.Initialize(settings);</span><br><span class="line">            &#x2F;&#x2F; 创建一个浏览器组件</span><br><span class="line">            chromeBrowser &#x3D; new ChromiumWebBrowser(&quot;http:&#x2F;&#x2F;baidu.com&quot;);</span><br><span class="line">            &#x2F;&#x2F; 将其添加到表单并将其填充到表单窗口</span><br><span class="line">            this.Controls.Add(chromeBrowser);</span><br><span class="line">            chromeBrowser.Dock &#x3D; DockStyle.Fill;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        private void Form1_FormClosing(object sender, FormClosingEventArgs e)</span><br><span class="line">        &#123;</span><br><span class="line">            Cef.Shutdown();</span><br><span class="line">        &#125;        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h2><p><a href="https://ourcodeworld.com/articles/read/173/how-to-use-cefsharp-chromium-embedded-framework-csharp-in-a-winforms-application">https://ourcodeworld.com/articles/read/173/how-to-use-cefsharp-chromium-embedded-framework-csharp-in-a-winforms-application</a></p>
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>Winform</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java类型转换工具类（持续更新）</title>
+    <url>/2021/03/19/Java%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7%E7%B1%BB%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/</url>
+    <content><![CDATA[<p>##简介<br>    将项目中用到的类型转换做个记录。<br>##详细代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@Component</span><br><span class="line">public class TypeUtil &#123;</span><br><span class="line">	&#x2F;&#x2F; [start]字符串转各种格式</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 字符串转日期(格式:&quot;yyyyMMdd&quot;)</span><br><span class="line">	public static Date StrToDateFirst(String str) &#123;</span><br><span class="line">		DateFormat format &#x3D; new SimpleDateFormat(&quot;yyyyMMdd&quot;);</span><br><span class="line">		Date date &#x3D; null;</span><br><span class="line">		try &#123;</span><br><span class="line">			date &#x3D; format.parse(str);</span><br><span class="line">		&#125; catch (ParseException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return date;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 字符串转日期(格式:&quot;dd&#x2F;MM&#x2F;yyyy&quot;)</span><br><span class="line">	public static Date StrToDateSecond(String str) &#123;</span><br><span class="line">		DateFormat format &#x3D; new SimpleDateFormat(&quot;dd&#x2F;MM&#x2F;yyyy&quot;);</span><br><span class="line">		Date date &#x3D; null;</span><br><span class="line">		try &#123;</span><br><span class="line">			date &#x3D; format.parse(str);</span><br><span class="line">		&#125; catch (ParseException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return date;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 字符串转日期(格式:&quot;yyyy-MM-dd&quot;)</span><br><span class="line">	public static Date StrToDateThird(String str) &#123;</span><br><span class="line">		DateFormat format &#x3D; new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);</span><br><span class="line">		Date date &#x3D; null;</span><br><span class="line">		try &#123;</span><br><span class="line">			date &#x3D; format.parse(str);</span><br><span class="line">		&#125; catch (ParseException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return date;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 字符串转日期(格式:&quot;yyyy-MM-dd HH:mm:ss&quot;)</span><br><span class="line">	public static Date StrToDateFourth(String str) &#123;</span><br><span class="line">		DateFormat format &#x3D; new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);</span><br><span class="line">		Date date &#x3D; null;</span><br><span class="line">		try &#123;</span><br><span class="line">			date &#x3D; format.parse(str);</span><br><span class="line">		&#125; catch (ParseException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return date;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 字符串转Integer</span><br><span class="line">	public static Integer StrToInteger(String str) &#123;</span><br><span class="line">		Integer integer &#x3D; null;</span><br><span class="line">		try &#123;</span><br><span class="line">			integer &#x3D; Integer.valueOf(str);</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return integer;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 字符串转Double</span><br><span class="line">	public static Double StrToDouble(String str) &#123;</span><br><span class="line">		Double double1 &#x3D; 0.00;</span><br><span class="line">		try &#123;</span><br><span class="line">			double1 &#x3D; Double.parseDouble(str);</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return double1;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 字符串转时间戳</span><br><span class="line">	public static Timestamp StrToTimeStamp(String str) &#123;</span><br><span class="line">		Timestamp timestamp &#x3D; null;</span><br><span class="line">		try &#123;</span><br><span class="line">			timestamp &#x3D; Timestamp.valueOf(str);</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return timestamp;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 字符串转BigDecimal</span><br><span class="line">	public static BigDecimal StrTiBigdecimal(String str) &#123;</span><br><span class="line">		BigDecimal bigDecimal &#x3D; null;</span><br><span class="line">		try &#123;</span><br><span class="line">			bigDecimal &#x3D; new BigDecimal(str);</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return bigDecimal;</span><br><span class="line">	&#125;</span><br><span class="line">	&#x2F;&#x2F; [end]</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Spring Batch学习笔记（一）</title>
+    <url>/2021/03/19/Spring-Batch%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+    <content><![CDATA[<p>##Spring Batch简介<br>        Spring Batch提供了可重复使用的功能，用来处理大量数据。包括记录、跟踪，事务管理，作业处理统计，作业重启，跳过和资源管理。<br>    此外还提供了更高级的技术服务和功能，通过优化和分区技术实现极高容量和高性能的批处理作业。<br>##Spring Batch使用场景<br>(1)一般的批处理程序<br>    ·从数据库，文件或者队列中读取大量数据<br>    ·处理读取到的数据<br>    ·将处理完成的数据保存到文件，数据库<br>(2)业务场景<br>    ·定期提交批处理<br>    ·并发批处理，并行处理Job<br>    ·分阶段的企业消息驱动处理<br>    ·大规模并行批处理<br>    ·失败后手动或预定重启<br>    ·依赖步骤的顺序处理<br>    ·部分处理，跳过记录<br>    ·整批交易，适用于批量较小或现有存储过程/脚本的情况<br>##Spring Batch主要组成部分<br>    ·JobRepository，用来注册job的容器<br>    ·JobLauncher，用来启动job的接口<br>    ·Job，实际执行的任务，包含一个或多个Step<br>    ·Step，step包含ItemReader、ItemProcessor和ItemWriter<br>    ·ItemReader，用来读取数据的接口<br>    ·ItemProcessor，用来处理数据的接口<br>    ·ItemWriter，用来输出数据的接口<br>    以上Spring Batch的主要组成部分只需要注册成Spring的Bean即可。批处理的配置类上需要使用@EnabelBatchProcessing。<br>##代码<br>    (1)监听器JobListener</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@Component</span><br><span class="line">public class JobListener implements JobExecutionListener&#123;</span><br><span class="line">	@Override</span><br><span class="line">	public void beforeJob(JobExecution jobExecution)&#123;</span><br><span class="line">		&#x2F;&#x2F; Job执行前需要执行的操作</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	@Override</span><br><span class="line">	public void afterJob(JobExecution jobExecution)&#123;</span><br><span class="line">		&#x2F;&#x2F; Job执行完成后需要执行的操作</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>(2)配置类DataBatchConfiguration
+</code></pre>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">@EnableBatchProcessing</span><br><span class="line">public class DataBatchConfiguration&#123;</span><br><span class="line">	&#x2F;&#x2F; 用于构建Job</span><br><span class="line">	@Resource</span><br><span class="line">	private JobBuilderFactory jobBuilderFactory;</span><br><span class="line">	</span><br><span class="line">	&#x2F;&#x2F; 用于构建Step</span><br><span class="line">	@Resource</span><br><span class="line">	private StepBuilderFactory stepBuilderFactory;</span><br><span class="line">	</span><br><span class="line">	&#x2F;&#x2F; 监听器</span><br><span class="line">	@Resource</span><br><span class="line">	private JobListener jobListener;</span><br><span class="line">	</span><br><span class="line">	&#x2F;&#x2F; ItemReader(使用的其中一种读取方式)</span><br><span class="line">	@Autowired</span><br><span class="line">	private RepositoryItemReader readerData;</span><br><span class="line">	</span><br><span class="line">	&#x2F;&#x2F; ItemWriter</span><br><span class="line">	@Autowired</span><br><span class="line">	private ItemReader writerData;</span><br><span class="line">	</span><br><span class="line">	&#x2F;&#x2F; Job</span><br><span class="line">	@Bean</span><br><span class="line">	public Job dataHandleJob()&#123;</span><br><span class="line">		return jobBuilderFactory.get(&quot;dataHandleJob&quot;).incrementer(new RunIdIncrementer()).start(getDataStep())</span><br><span class="line">			.listener(jobListener).build();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	&#x2F;&#x2F; Step</span><br><span class="line">	&#x2F;&#x2F; User:要处理的对象</span><br><span class="line">	@Bean</span><br><span class="line">	public Step getTDistSellOut() &#123;</span><br><span class="line">	return stepBuilderFactory.get(&quot;getData&quot;).&lt;User, User&gt;chunk(10000) &#x2F;&#x2F; 一次commit数据的数量</span><br><span class="line">			.faultTolerant().retryLimit(3)</span><br><span class="line">			.retry(Exception.class)</span><br><span class="line">			.skipLimit(100)											 &#x2F;&#x2F; 发生异常时，允许重试的次数</span><br><span class="line">			.skip(Exception.class)</span><br><span class="line">			.reader(readerData)									     &#x2F;&#x2F; reader</span><br><span class="line">			.writer(writerData).build();							 &#x2F;&#x2F; writer</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>(3)读取类ReaderStep
+</code></pre>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@Component</span><br><span class="line">public class ReaderStep&#123;</span><br><span class="line">	@Resource</span><br><span class="line">	private EntityManagerFactory emf;</span><br><span class="line">	</span><br><span class="line">	@Autowired</span><br><span class="line">	private UserRepository userRepository;</span><br><span class="line">	</span><br><span class="line">	@Bean RepositoryItemReader&lt;User&gt; readerData()&#123;</span><br><span class="line">		&#x2F;&#x2F; 排序map(读取数据按照ID进行正序排列)</span><br><span class="line">		Map&lt;String,Sort.Direction&gt; map &#x3D; new HashMap&lt;&gt;();</span><br><span class="line">		map.put(&quot;id&quot;,sort.Direction.ASC);</span><br><span class="line">		&#x2F;&#x2F; SQL语句所需参数LIST</span><br><span class="line">		List&lt;String&gt; params &#x3D; new ArrayList&lt;&gt;();</span><br><span class="line">		params.add(&quot;2019-03-20&quot;);</span><br><span class="line">		RepositoryItemReader&lt;User&gt; repositoryItemReader &#x3D; new new RepositoryItemReader&lt;&gt;();</span><br><span class="line">		&#x2F;&#x2F; Set Repository</span><br><span class="line">		repositoryItemReader.setRepository(userRepository);</span><br><span class="line">		&#x2F;&#x2F; Set PageSize(没有会报错)</span><br><span class="line">		repositoryItemReader.setPageSize(5);</span><br><span class="line">		&#x2F;&#x2F; Set Repository Method</span><br><span class="line">		repositoryItemReader.setMethodName(&quot;findByDateLike&quot;);</span><br><span class="line">		&#x2F;&#x2F; Set 参数List</span><br><span class="line">		repositoryItemReader.setArguments(params);</span><br><span class="line">		&#x2F;&#x2F; Set 排序Map</span><br><span class="line">		repositoryItemReader.setSort(map);</span><br><span class="line">		return repositoryItemReader;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>(4)写出类WriterStep
+</code></pre>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@Component</span><br><span class="line">public class WriterStep &#123;</span><br><span class="line">	@Resource</span><br><span class="line">	private UserRepository userRepository;</span><br><span class="line"></span><br><span class="line">	@Bean</span><br><span class="line">	public RepositoryItemWriter&lt;User&gt; writerData()&#123;</span><br><span class="line">		RepositoryItemWriter&lt;User&gt; repositoryItemWriter &#x3D; new RepositoryItemWriter&lt;&gt;();</span><br><span class="line">		repositoryItemWriter.setRepository(userRepository);</span><br><span class="line">		repositoryItemWriter.setMethodName(&quot;save&quot;);</span><br><span class="line">		return repositoryItemWriter;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>##参考网址<br><a href="https://www.cnblogs.com/ealenxie/p/9647703.html">https://www.cnblogs.com/ealenxie/p/9647703.html</a></p>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Vue函数防抖和函数节流</title>
     <url>/2021/03/18/Vue%E5%87%BD%E6%95%B0%E9%98%B2%E6%8A%96%E5%92%8C%E5%87%BD%E6%95%B0%E8%8A%82%E6%B5%81/</url>
     <content><![CDATA[]]></content>
@@ -14,7 +123,34 @@
   <entry>
     <title>about</title>
     <url>/2021/03/18/about/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h2 id="张凯"><a href="#张凯" class="headerlink" title="张凯"></a>张凯</h2><h2 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h2><h2 id="教育经历"><a href="#教育经历" class="headerlink" title="教育经历"></a>教育经历</h2><h2 id="工作经历"><a href="#工作经历" class="headerlink" title="工作经历"></a>工作经历</h2><h2 id="项目经历"><a href="#项目经历" class="headerlink" title="项目经历"></a>项目经历</h2><h2 id="技能清单"><a href="#技能清单" class="headerlink" title="技能清单"></a>技能清单</h2>]]></content>
+      <categories>
+        <category>个人</category>
+      </categories>
+      <tags>
+        <tag>简历</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>维护java项目之==和equals</title>
+    <url>/2021/03/19/%E7%BB%B4%E6%8A%A4java%E9%A1%B9%E7%9B%AE%E4%B9%8B-%E5%92%8Cequals/</url>
+    <content><![CDATA[<p>最近发生一件很尴尬的事情，在维护一个Java项目的时候，发现有使用<code>==</code>来比较两个对象的属性，<br>于是顺手就把<code>==</code>改成了equals。悲剧发生……</p>
+<h2 id="和equals的区别"><a href="#和equals的区别" class="headerlink" title="==和equals的区别"></a><code>==</code>和equals的区别</h2><ul>
+<li><code>==</code>：值比较</li>
+<li>equals：引用比较，但一些类重写了equals方法，如String、Integer等，变成了值比较。<h2 id="使用equals的前提"><a href="#使用equals的前提" class="headerlink" title="使用equals的前提"></a>使用equals的前提</h2></li>
+<li>使用equals进行比较，如：</li>
+<li>a和b是两个对象<ul>
+<li>```<br>  a.getId().equals(b.getId())<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- 需要确保a.getId()不为null，因为null是没有.equals()方法的。</span><br><span class="line">## 各种对象使用equals</span><br><span class="line">- String类型：</span><br><span class="line">    - 可以使用StringUtils.equals()进行比较，该方法内置非空校验</span><br><span class="line">- 其余封装类型：</span><br><span class="line">    - 可以使用Objects.equals()进行比较，该方法内置非空校验</span><br><span class="line">- 使用三目运算符：</span><br><span class="line">    - &#96;&#96;&#96;</span><br><span class="line">       a.getId() &#x3D;&#x3D; null ? b.getId() &#x3D;&#x3D; null ? false : true : a.getId().equals(b.getId())</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
   </entry>
   <entry>
     <title>一款智能的日期解析工具</title>
@@ -67,27 +203,6 @@
 <h2 id="支持的日期格式（部分）"><a href="#支持的日期格式（部分）" class="headerlink" title="支持的日期格式（部分）"></a>支持的日期格式（部分）</h2><p>以下为<code>dateparser</code>在单元测试中完成测试解析的日期格式样例，具体可以参考源代码。同时需要注意的是，这个列表只是一个子集：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">May 8, 2009 5:57:51 PM                               </span><br><span class="line">oct 7, 1970                                          </span><br><span class="line">oct 7, &#39;70                                           </span><br><span class="line">oct. 7, 1970                                         </span><br><span class="line">oct. 7, 70                                           </span><br><span class="line">Mon Jan  2 15:04:05 2006                             </span><br><span class="line">Mon Jan  2 15:04:05 MST 2006                         </span><br><span class="line">Mon Jan 02 15:04:05 -0700 2006                       </span><br><span class="line">Monday, 02-Jan-06 15:04:05 MST                       </span><br><span class="line">Mon, 02 Jan 2006 15:04:05 MST                        </span><br><span class="line">Tue, 11 Jul 2017 16:28:13 +0200 (CEST)               </span><br><span class="line">Mon, 02 Jan 2006 15:04:05 -0700                      </span><br><span class="line">Thu, 4 Jan 2018 17:53:36 +0000                       </span><br><span class="line">Mon Aug 10 15:44:11 UTC+0100 2015                    </span><br><span class="line">Fri Jul 03 2015 18:04:07 GMT+0100 (GMT Daylight Time)</span><br><span class="line">September 17, 2012 10:09am                         </span><br><span class="line">September 17, 2012 at 10:09am PST-08               </span><br><span class="line">September 17, 2012, 10:10:09                       </span><br><span class="line">October 7, 1970                                    </span><br><span class="line">October 7th, 1970                                  </span><br><span class="line">12 Feb 2006, 19:17                                 </span><br><span class="line">12 Feb 2006 19:17                                  </span><br><span class="line">7 oct 70                                           </span><br><span class="line">7 oct 1970                                         </span><br><span class="line">03 February 2013                                   </span><br><span class="line">1 July 2013                                        </span><br><span class="line">2013-Feb-03                                        </span><br><span class="line">3&#x2F;31&#x2F;2014                                          </span><br><span class="line">03&#x2F;31&#x2F;2014                                         </span><br><span class="line">08&#x2F;21&#x2F;71                                           </span><br><span class="line">8&#x2F;1&#x2F;71                                             </span><br><span class="line">4&#x2F;8&#x2F;2014 22:05                                     </span><br><span class="line">04&#x2F;08&#x2F;2014 22:05                                   </span><br><span class="line">4&#x2F;8&#x2F;14 22:05                                       </span><br><span class="line">04&#x2F;2&#x2F;2014 03:00:51                                 </span><br><span class="line">8&#x2F;8&#x2F;1965 12:00:00 AM                               </span><br><span class="line">8&#x2F;8&#x2F;1965 01:00:01 PM                               </span><br><span class="line">8&#x2F;8&#x2F;1965 01:00 PM                                  </span><br><span class="line">8&#x2F;8&#x2F;1965 1:00 PM                                   </span><br><span class="line">8&#x2F;8&#x2F;1965 12:00 AM                                  </span><br><span class="line">4&#x2F;02&#x2F;2014 03:00:51                                 </span><br><span class="line">03&#x2F;19&#x2F;2012 10:11:59                                </span><br><span class="line">03&#x2F;19&#x2F;2012 10:11:59.3186369                        </span><br><span class="line">2014&#x2F;3&#x2F;31                                          </span><br><span class="line">2014&#x2F;03&#x2F;31                                         </span><br><span class="line">2014&#x2F;4&#x2F;8 22:05                                     </span><br><span class="line">2014&#x2F;04&#x2F;08 22:05                                   </span><br><span class="line">2014&#x2F;04&#x2F;2 03:00:51                                 </span><br><span class="line">2014&#x2F;4&#x2F;02 03:00:51                                 </span><br><span class="line">2012&#x2F;03&#x2F;19 10:11:59                                </span><br><span class="line">2012&#x2F;03&#x2F;19 10:11:59.3186369                        </span><br><span class="line">2014年04月08日                                      </span><br><span class="line">2006-01-02T15:04:05+0000                           </span><br><span class="line">2009-08-12T22:15:09-07:00                          </span><br><span class="line">2009-08-12T22:15:09                                </span><br><span class="line">2009-08-12T22:15:09Z                               </span><br><span class="line">2014-04-26 17:24:37.3186369                        </span><br><span class="line">2012-08-03 18:31:59.257000000                      </span><br><span class="line">2014-04-26 17:24:37.123                            </span><br><span class="line">2013-04-01 22:43                                   </span><br><span class="line">2013-04-01 22:43:22                                </span><br><span class="line">2014-12-16 06:20:00 UTC                            </span><br><span class="line">2014-12-16 06:20:00 GMT                          </span><br><span class="line">2014-04-26 05:24:37 PM                           </span><br><span class="line">2014-04-26 13:13:43 +0800                        </span><br><span class="line">2014-04-26 13:13:43 +0800 +08                    </span><br><span class="line">2014-04-26 13:13:44 +09:00                       </span><br><span class="line">2012-08-03 18:31:59.257000000 +0000 UTC          </span><br><span class="line">2015-09-30 18:48:56.35272715 +0000 UTC           </span><br><span class="line">2015-02-18 00:12:00 +0000 GMT                    </span><br><span class="line">2015-02-18 00:12:00 +0000 UTC                    </span><br><span class="line">2015-02-08 03:02:00 +0300 MSK m&#x3D;+0.000000001     </span><br><span class="line">2015-02-08 03:02:00.001 +0300 MSK m&#x3D;+0.000000001 </span><br><span class="line">2017-07-19 03:21:51+00:00</span><br><span class="line">2014-04-26               </span><br><span class="line">2014-04                  </span><br><span class="line">2014                     </span><br><span class="line">2014-05-11 08:20:13,787  </span><br><span class="line">3.31.2014       </span><br><span class="line">03.31.2014      </span><br><span class="line">08.21.71        </span><br><span class="line">2014.03         </span><br><span class="line">2014.03.30      </span><br><span class="line">20140601        </span><br><span class="line">20140722105203  </span><br><span class="line">1332151919      </span><br><span class="line">1384216367189   </span><br><span class="line">1384216367111222</span><br><span class="line">1384216367111222333</span><br></pre></td></tr></table></figure>
 <h2 id="原文地址"><a href="#原文地址" class="headerlink" title="原文地址"></a>原文地址</h2><p>本文转载至[<a href="https://sulin.me/2019/38Z4HAT.html]">https://sulin.me/2019/38Z4HAT.html]</a></p>
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>维护java项目之==和equals</title>
-    <url>/2021/03/19/%E7%BB%B4%E6%8A%A4java%E9%A1%B9%E7%9B%AE%E4%B9%8B-%E5%92%8Cequals/</url>
-    <content><![CDATA[<p>最近发生一件很尴尬的事情，在维护一个Java项目的时候，发现有使用<code>==</code>来比较两个对象的属性，<br>于是顺手就把<code>==</code>改成了equals。悲剧发生……</p>
-<h2 id="和equals的区别"><a href="#和equals的区别" class="headerlink" title="==和equals的区别"></a><code>==</code>和equals的区别</h2><ul>
-<li><code>==</code>：值比较</li>
-<li>equals：引用比较，但一些类重写了equals方法，如String、Integer等，变成了值比较。<h2 id="使用equals的前提"><a href="#使用equals的前提" class="headerlink" title="使用equals的前提"></a>使用equals的前提</h2></li>
-<li>使用equals进行比较，如：</li>
-<li>a和b是两个对象<ul>
-<li>```<br>  a.getId().equals(b.getId())<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- 需要确保a.getId()不为null，因为null是没有.equals()方法的。</span><br><span class="line">## 各种对象使用equals</span><br><span class="line">- String类型：</span><br><span class="line">    - 可以使用StringUtils.equals()进行比较，该方法内置非空校验</span><br><span class="line">- 其余封装类型：</span><br><span class="line">    - 可以使用Objects.equals()进行比较，该方法内置非空校验</span><br><span class="line">- 使用三目运算符：</span><br><span class="line">    - &#96;&#96;&#96;</span><br><span class="line">       a.getId() &#x3D;&#x3D; null ? b.getId() &#x3D;&#x3D; null ? false : true : a.getId().equals(b.getId())</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
 ]]></content>
       <categories>
         <category>后端</category>
