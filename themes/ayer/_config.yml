@@ -137,7 +137,7 @@ busuanzi:
 
 # 友盟cnzz统计(url填js代码src链接)
 cnzz:
-  enable: true
+  enable: false
   url: https://s9.cnzz.com/z_stat.php?id=1278069914&web_id=1278069914
 
 # Google Analytics
@@ -180,12 +180,12 @@ friends_link:
     url: https://github.com/Shen-Yu/hexo-theme-ayer
     #网站图片(可忽略不写)
     img: /images/ayer.png
-  GitHub:
-    url: https://github.com/Shen-Yu
-    img: https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/github.png
-  码云:
-    url: https://gitee.com/shen-yu
-    img: https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/gitee.png
+  博客园: 
+    url: https://www.cnblogs.com/GardenofEden/
+    img: https://img.imgdb.cn/item/605454c1524f85ce29112785.jpg
+  知乎:
+    url: https://www.zhihu.com/people/zhang-kai-16-35-98
+    img: https://static.zhihu.com/heifetz/assets/apple-touch-icon-152.a53ae37b.png
   Hexo官网:
     url: https://hexo.io
     img: https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/hexo.png
