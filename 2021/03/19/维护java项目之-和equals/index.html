@@ -95,7 +95,7 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p>最近发生一件很尴尬的事情，在维护一个 Java 项目的时候，发现有使用 <code>==</code> 来比较两个对象的属性，<br>于是顺手就把 <code>==</code> 改成了 equals。悲剧发生……</p>
+  <p>最近发生一件很尴尬的事情，在维护一个 Java 项目的时候，发现有使用 <code>==</code> 来比较两个对象的属性，<br>于是顺手就把 <code>==</code> 改成了 equals。悲剧发生……🤣🤣🤣</p>
 <h2 id="和-equals-的区别"><a href="#和-equals-的区别" class="headerlink" title="== 和 equals 的区别"></a><code>==</code> 和 equals 的区别</h2><p><code>==</code> ：对于基本类型来说是值比较，对于引用类型来说是引用比较<br>equals：引用比较，但一些类重写了 equals 方法，如 String、Integer 等，变成了值比较。</p>
 <h2 id="使用-equals-的前提"><a href="#使用-equals-的前提" class="headerlink" title="使用 equals 的前提"></a>使用 equals 的前提</h2><p>使用 equals 进行比较，如：<br>a 和 b 是两个对象</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a.getId().equals(b.getId())</span><br></pre></td></tr></table></figure>
