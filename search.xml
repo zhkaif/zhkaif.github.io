@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>C#之WinForm设置控件居中</title>
-    <url>/2021/03/19/C-%E4%B9%8BWinForm%E8%AE%BE%E7%BD%AE%E6%8E%A7%E4%BB%B6%E5%B1%85%E4%B8%AD/</url>
-    <content><![CDATA[<h2 id="简单阐述"><a href="#简单阐述" class="headerlink" title="简单阐述"></a>简单阐述</h2><pre><code>在C#的WinForm里面，原生控件是没有居中属性的，故通过重写OnResize(EventArgs e)方法，通过计算，重新定位控件位置。
-</code></pre>
-<h2 id="以Label控件为例"><a href="#以Label控件为例" class="headerlink" title="以Label控件为例"></a>以Label控件为例</h2><pre><code>(1)将label的AutoSize属性设置为false；Dock属性设置为fill；TextAlign属性设置为MiddleCenter。
-(2)重写居中的代码如下：
-</code></pre>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">protected override void OnResize(EventArgs e)</span><br><span class="line">        &#123;</span><br><span class="line">            base.OnResize(e);</span><br><span class="line">            int x &#x3D; (int)(0.5 * (this.Width - label1.Width));</span><br><span class="line">            int y &#x3D; label1.Location.Y;</span><br><span class="line">            label1.Location &#x3D; new System.Drawing.Point(x,y);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h2><p><a href="https://blog.csdn.net/mingyueyixi/article/details/55035935">https://blog.csdn.net/mingyueyixi/article/details/55035935</a></p>
-]]></content>
-      <categories>
-        <category>C#</category>
-      </categories>
-      <tags>
-        <tag>Winform</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>C#之使用AutoUpdater自动更新客户端</title>
     <url>/2021/03/19/C-%E4%B9%8B%E4%BD%BF%E7%94%A8AutoUpdater%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E5%AE%A2%E6%88%B7%E7%AB%AF/</url>
     <content><![CDATA[<h2 id="安装NuGet包"><a href="#安装NuGet包" class="headerlink" title="安装NuGet包"></a>安装NuGet包</h2><pre><code>在Visio studio中右击解决方案，选择管理NuGet包，搜索安装Autoupdater.NET.Official。
@@ -74,15 +56,21 @@
       </tags>
   </entry>
   <entry>
-    <title>Java类型转换工具类（持续更新）</title>
-    <url>/2021/03/19/Java%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7%E7%B1%BB%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/</url>
-    <content><![CDATA[<p>##简介<br>    将项目中用到的类型转换做个记录。<br>##详细代码</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@Component</span><br><span class="line">public class TypeUtil &#123;</span><br><span class="line">	&#x2F;&#x2F; [start]字符串转各种格式</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 字符串转日期(格式:&quot;yyyyMMdd&quot;)</span><br><span class="line">	public static Date StrToDateFirst(String str) &#123;</span><br><span class="line">		DateFormat format &#x3D; new SimpleDateFormat(&quot;yyyyMMdd&quot;);</span><br><span class="line">		Date date &#x3D; null;</span><br><span class="line">		try &#123;</span><br><span class="line">			date &#x3D; format.parse(str);</span><br><span class="line">		&#125; catch (ParseException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return date;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 字符串转日期(格式:&quot;dd&#x2F;MM&#x2F;yyyy&quot;)</span><br><span class="line">	public static Date StrToDateSecond(String str) &#123;</span><br><span class="line">		DateFormat format &#x3D; new SimpleDateFormat(&quot;dd&#x2F;MM&#x2F;yyyy&quot;);</span><br><span class="line">		Date date &#x3D; null;</span><br><span class="line">		try &#123;</span><br><span class="line">			date &#x3D; format.parse(str);</span><br><span class="line">		&#125; catch (ParseException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return date;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 字符串转日期(格式:&quot;yyyy-MM-dd&quot;)</span><br><span class="line">	public static Date StrToDateThird(String str) &#123;</span><br><span class="line">		DateFormat format &#x3D; new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);</span><br><span class="line">		Date date &#x3D; null;</span><br><span class="line">		try &#123;</span><br><span class="line">			date &#x3D; format.parse(str);</span><br><span class="line">		&#125; catch (ParseException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return date;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 字符串转日期(格式:&quot;yyyy-MM-dd HH:mm:ss&quot;)</span><br><span class="line">	public static Date StrToDateFourth(String str) &#123;</span><br><span class="line">		DateFormat format &#x3D; new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);</span><br><span class="line">		Date date &#x3D; null;</span><br><span class="line">		try &#123;</span><br><span class="line">			date &#x3D; format.parse(str);</span><br><span class="line">		&#125; catch (ParseException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return date;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 字符串转Integer</span><br><span class="line">	public static Integer StrToInteger(String str) &#123;</span><br><span class="line">		Integer integer &#x3D; null;</span><br><span class="line">		try &#123;</span><br><span class="line">			integer &#x3D; Integer.valueOf(str);</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return integer;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 字符串转Double</span><br><span class="line">	public static Double StrToDouble(String str) &#123;</span><br><span class="line">		Double double1 &#x3D; 0.00;</span><br><span class="line">		try &#123;</span><br><span class="line">			double1 &#x3D; Double.parseDouble(str);</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return double1;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 字符串转时间戳</span><br><span class="line">	public static Timestamp StrToTimeStamp(String str) &#123;</span><br><span class="line">		Timestamp timestamp &#x3D; null;</span><br><span class="line">		try &#123;</span><br><span class="line">			timestamp &#x3D; Timestamp.valueOf(str);</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return timestamp;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 字符串转BigDecimal</span><br><span class="line">	public static BigDecimal StrTiBigdecimal(String str) &#123;</span><br><span class="line">		BigDecimal bigDecimal &#x3D; null;</span><br><span class="line">		try &#123;</span><br><span class="line">			bigDecimal &#x3D; new BigDecimal(str);</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return bigDecimal;</span><br><span class="line">	&#125;</span><br><span class="line">	&#x2F;&#x2F; [end]</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <title>C#之WinForm设置控件居中</title>
+    <url>/2021/03/19/C-%E4%B9%8BWinForm%E8%AE%BE%E7%BD%AE%E6%8E%A7%E4%BB%B6%E5%B1%85%E4%B8%AD/</url>
+    <content><![CDATA[<h2 id="简单阐述"><a href="#简单阐述" class="headerlink" title="简单阐述"></a>简单阐述</h2><pre><code>在C#的WinForm里面，原生控件是没有居中属性的，故通过重写OnResize(EventArgs e)方法，通过计算，重新定位控件位置。
+</code></pre>
+<h2 id="以Label控件为例"><a href="#以Label控件为例" class="headerlink" title="以Label控件为例"></a>以Label控件为例</h2><pre><code>(1)将label的AutoSize属性设置为false；Dock属性设置为fill；TextAlign属性设置为MiddleCenter。
+(2)重写居中的代码如下：
+</code></pre>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">protected override void OnResize(EventArgs e)</span><br><span class="line">        &#123;</span><br><span class="line">            base.OnResize(e);</span><br><span class="line">            int x &#x3D; (int)(0.5 * (this.Width - label1.Width));</span><br><span class="line">            int y &#x3D; label1.Location.Y;</span><br><span class="line">            label1.Location &#x3D; new System.Drawing.Point(x,y);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h2><p><a href="https://blog.csdn.net/mingyueyixi/article/details/55035935">https://blog.csdn.net/mingyueyixi/article/details/55035935</a></p>
+]]></content>
       <categories>
-        <category>后端</category>
+        <category>C#</category>
       </categories>
       <tags>
-        <tag>Java</tag>
+        <tag>Winform</tag>
       </tags>
   </entry>
   <entry>
@@ -110,25 +98,15 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue函数防抖和函数节流</title>
-    <url>/2021/03/18/Vue%E5%87%BD%E6%95%B0%E9%98%B2%E6%8A%96%E5%92%8C%E5%87%BD%E6%95%B0%E8%8A%82%E6%B5%81/</url>
-    <content><![CDATA[]]></content>
+    <title>Java类型转换工具类（持续更新）</title>
+    <url>/2021/03/19/Java%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7%E7%B1%BB%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/</url>
+    <content><![CDATA[<p>##简介<br>    将项目中用到的类型转换做个记录。<br>##详细代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@Component</span><br><span class="line">public class TypeUtil &#123;</span><br><span class="line">	&#x2F;&#x2F; [start]字符串转各种格式</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 字符串转日期(格式:&quot;yyyyMMdd&quot;)</span><br><span class="line">	public static Date StrToDateFirst(String str) &#123;</span><br><span class="line">		DateFormat format &#x3D; new SimpleDateFormat(&quot;yyyyMMdd&quot;);</span><br><span class="line">		Date date &#x3D; null;</span><br><span class="line">		try &#123;</span><br><span class="line">			date &#x3D; format.parse(str);</span><br><span class="line">		&#125; catch (ParseException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return date;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 字符串转日期(格式:&quot;dd&#x2F;MM&#x2F;yyyy&quot;)</span><br><span class="line">	public static Date StrToDateSecond(String str) &#123;</span><br><span class="line">		DateFormat format &#x3D; new SimpleDateFormat(&quot;dd&#x2F;MM&#x2F;yyyy&quot;);</span><br><span class="line">		Date date &#x3D; null;</span><br><span class="line">		try &#123;</span><br><span class="line">			date &#x3D; format.parse(str);</span><br><span class="line">		&#125; catch (ParseException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return date;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 字符串转日期(格式:&quot;yyyy-MM-dd&quot;)</span><br><span class="line">	public static Date StrToDateThird(String str) &#123;</span><br><span class="line">		DateFormat format &#x3D; new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);</span><br><span class="line">		Date date &#x3D; null;</span><br><span class="line">		try &#123;</span><br><span class="line">			date &#x3D; format.parse(str);</span><br><span class="line">		&#125; catch (ParseException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return date;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 字符串转日期(格式:&quot;yyyy-MM-dd HH:mm:ss&quot;)</span><br><span class="line">	public static Date StrToDateFourth(String str) &#123;</span><br><span class="line">		DateFormat format &#x3D; new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);</span><br><span class="line">		Date date &#x3D; null;</span><br><span class="line">		try &#123;</span><br><span class="line">			date &#x3D; format.parse(str);</span><br><span class="line">		&#125; catch (ParseException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return date;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 字符串转Integer</span><br><span class="line">	public static Integer StrToInteger(String str) &#123;</span><br><span class="line">		Integer integer &#x3D; null;</span><br><span class="line">		try &#123;</span><br><span class="line">			integer &#x3D; Integer.valueOf(str);</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return integer;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 字符串转Double</span><br><span class="line">	public static Double StrToDouble(String str) &#123;</span><br><span class="line">		Double double1 &#x3D; 0.00;</span><br><span class="line">		try &#123;</span><br><span class="line">			double1 &#x3D; Double.parseDouble(str);</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return double1;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 字符串转时间戳</span><br><span class="line">	public static Timestamp StrToTimeStamp(String str) &#123;</span><br><span class="line">		Timestamp timestamp &#x3D; null;</span><br><span class="line">		try &#123;</span><br><span class="line">			timestamp &#x3D; Timestamp.valueOf(str);</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return timestamp;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 字符串转BigDecimal</span><br><span class="line">	public static BigDecimal StrTiBigdecimal(String str) &#123;</span><br><span class="line">		BigDecimal bigDecimal &#x3D; null;</span><br><span class="line">		try &#123;</span><br><span class="line">			bigDecimal &#x3D; new BigDecimal(str);</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		return bigDecimal;</span><br><span class="line">	&#125;</span><br><span class="line">	&#x2F;&#x2F; [end]</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>前端</category>
+        <category>后端</category>
       </categories>
       <tags>
-        <tag>Vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>about</title>
-    <url>/2021/03/18/about/</url>
-    <content><![CDATA[<h2 id="张凯"><a href="#张凯" class="headerlink" title="张凯"></a>张凯</h2><h2 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h2><h2 id="教育经历"><a href="#教育经历" class="headerlink" title="教育经历"></a>教育经历</h2><h2 id="工作经历"><a href="#工作经历" class="headerlink" title="工作经历"></a>工作经历</h2><h2 id="项目经历"><a href="#项目经历" class="headerlink" title="项目经历"></a>项目经历</h2><h2 id="技能清单"><a href="#技能清单" class="headerlink" title="技能清单"></a>技能清单</h2>]]></content>
-      <categories>
-        <category>个人</category>
-      </categories>
-      <tags>
-        <tag>简历</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -209,6 +187,28 @@
       </categories>
       <tags>
         <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于我</title>
+    <url>/2021/03/18/about/</url>
+    <content><![CDATA[<h2 id="张凯"><a href="#张凯" class="headerlink" title="张凯"></a>张凯</h2><h2 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h2><h2 id="教育经历"><a href="#教育经历" class="headerlink" title="教育经历"></a>教育经历</h2><h2 id="工作经历"><a href="#工作经历" class="headerlink" title="工作经历"></a>工作经历</h2><h2 id="项目经历"><a href="#项目经历" class="headerlink" title="项目经历"></a>项目经历</h2><h2 id="技能清单"><a href="#技能清单" class="headerlink" title="技能清单"></a>技能清单</h2>]]></content>
+      <categories>
+        <category>个人</category>
+      </categories>
+      <tags>
+        <tag>简历</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue函数防抖和函数节流</title>
+    <url>/2021/03/18/Vue%E5%87%BD%E6%95%B0%E9%98%B2%E6%8A%96%E5%92%8C%E5%87%BD%E6%95%B0%E8%8A%82%E6%B5%81/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
       </tags>
   </entry>
 </search>
