@@ -63,7 +63,7 @@
   <time datetime="2021-03-19T03:10:36.000Z" itemprop="datePublished">2021-03-19</time>
 </a> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Net/">.Net</a> / <a class="article-category-link" href="/categories/Net/Winform/">Winform</a>
+    <a class="article-category-link" href="/categories/Net/">. Net</a> / <a class="article-category-link" href="/categories/Net/Winform/">Winform</a>
   </div>
   
 <div class="word_count">
@@ -100,7 +100,7 @@
 <h2 id="以Label控件为例"><a href="#以Label控件为例" class="headerlink" title="以Label控件为例"></a>以Label控件为例</h2><pre><code>(1)将label的AutoSize属性设置为false；Dock属性设置为fill；TextAlign属性设置为MiddleCenter。
 (2)重写居中的代码如下：
 </code></pre>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">protected override void OnResize(EventArgs e)</span><br><span class="line">        &#123;</span><br><span class="line">            base.OnResize(e);</span><br><span class="line">            int x &#x3D; (int)(0.5 * (this.Width - label1.Width));</span><br><span class="line">            int y &#x3D; label1.Location.Y;</span><br><span class="line">            label1.Location &#x3D; new System.Drawing.Point(x,y);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">protected override void OnResize(EventArgs e)</span><br><span class="line">        &#123;</span><br><span class="line">            base.OnResize(e);</span><br><span class="line">            int x &#x3D; (int)(0.5 * (this.Width - label1.Width));</span><br><span class="line">            int y &#x3D; label1.Location.Y;</span><br><span class="line">            label1.Location &#x3D; new System.Drawing.Point(x,y);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/mingyueyixi/article/details/55035935">https://blog.csdn.net/mingyueyixi/article/details/55035935</a></p>
  
