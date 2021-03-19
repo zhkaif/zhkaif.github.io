@@ -71,7 +71,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">334</span>
+            <span class="post-count">327</span>
         </span>
     </span>
 
@@ -95,23 +95,23 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h2 id="函数防抖（debounce）"><a href="#函数防抖（debounce）" class="headerlink" title="函数防抖（debounce）"></a>函数防抖（debounce）</h2><h4 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h4><ul>
+  <h2 id="函数防抖（debounce）"><a href="#函数防抖（debounce）" class="headerlink" title="函数防抖（debounce）"></a>函数防抖（debounce）</h2><h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ul>
 <li>登录、发短信等按钮避免用户点击太快，以致于发送了多次请求，需要防抖</li>
-<li>调整浏览器窗口大小时，resize次数过于频繁，造成计算过多，此时需要一次到位，就用到了防抖</li>
+<li>调整浏览器窗口大小时，resize 次数过于频繁，造成计算过多，此时需要一次到位，就用到了防抖</li>
 <li>文本编辑器实时保存，当无任何更改操作一秒后进行保存</li>
 </ul>
-<h4 id="实现方法，防抖重在清零"><a href="#实现方法，防抖重在清零" class="headerlink" title="实现方法，防抖重在清零"></a>实现方法，防抖重在清零</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function debounce(f, wait)&#123;</span><br><span class="line">    let timer  </span><br><span class="line">    return (...args) &#x3D;&gt; &#123;</span><br><span class="line">        clearTimeout(timer)</span><br><span class="line">        timer &#x3D; setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">            f(..args)</span><br><span class="line">        &#125;, wait)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="实现方法，防抖重在清零"><a href="#实现方法，防抖重在清零" class="headerlink" title="实现方法，防抖重在清零"></a>实现方法，防抖重在清零</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">f, wait</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> timer</span><br><span class="line">    <span class="keyword">return</span> <span class="function">(<span class="params">...args</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">clearTimeout</span>(timer)</span><br><span class="line">        timer = <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            f(..args)</span><br><span class="line">        &#125;, wait)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="函数节流（throttle）"><a href="#函数节流（throttle）" class="headerlink" title="函数节流（throttle）"></a>函数节流（throttle）</h2><h4 id="应用场景-1"><a href="#应用场景-1" class="headerlink" title="应用场景"></a>应用场景</h4><ul>
+<h2 id="函数节流（throttle）"><a href="#函数节流（throttle）" class="headerlink" title="函数节流（throttle）"></a>函数节流（throttle）</h2><h3 id="应用场景-1"><a href="#应用场景-1" class="headerlink" title="应用场景"></a>应用场景</h3><ul>
 <li><code>scroll</code>事件，每隔一秒计算一次位置信息等</li>
 <li>浏览器播放事件，每隔一秒计算一次进度信息等</li>
-<li>input框实时搜索并发送请求展示下拉列表，每隔一秒发送一次请求</li>
+<li>input 框实时搜索并发送请求展示下拉列表，每隔一秒发送一次请求</li>
 </ul>
-<h4 id="实现方法，节流重在开关锁"><a href="#实现方法，节流重在开关锁" class="headerlink" title="实现方法，节流重在开关锁"></a>实现方法，节流重在开关锁</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function throttle(f, wait)&#123;</span><br><span class="line">    let timer</span><br><span class="line">    return (..args) &#x3D;&gt; &#123;</span><br><span class="line">        if (timer) &#123; return &#125;</span><br><span class="line">        timer &#x3D; setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">            f(..args)</span><br><span class="line">            timer &#x3D; null</span><br><span class="line">        &#125;, wait)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="实现方法，节流重在开关锁"><a href="#实现方法，节流重在开关锁" class="headerlink" title="实现方法，节流重在开关锁"></a>实现方法，节流重在开关锁</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">f, wait</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> timer</span><br><span class="line">    <span class="keyword">return</span> <span class="function">(<span class="params">..args</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (timer) &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">        timer = <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            f(..args)</span><br><span class="line">            timer = <span class="literal">null</span></span><br><span class="line">        &#125;, wait)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
 <li>防抖：防止抖动，单位时间内事件触发会被重置，避免事件被误触发多次。代码重在清零<code>clearTimeout</code></li>
-<li>节流：控制流量，单位时间内事件只能触发一次，如果服务器端的限流即Rate Limit。代码实现重在开锁关锁<code>timer=timeout；timer=null</code></li>
+<li>节流：控制流量，单位时间内事件只能触发一次，如果服务器端的限流即 Rate Limit。代码实现重在开锁关锁<code>timer=timeout；timer=null</code></li>
 </ul>
  
       <!-- reward -->
