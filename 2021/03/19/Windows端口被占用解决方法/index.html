@@ -71,7 +71,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">0</span>
+            <span class="post-count">162</span>
         </span>
     </span>
 
@@ -87,13 +87,32 @@
  
     </div>
       
+    <div class="tocbot"></div>
+
 
 
 
   
     <div class="article-entry" itemprop="articleBody">
        
-   
+  <h2 id="Error场景"><a href="#Error场景" class="headerlink" title="Error场景"></a>Error场景</h2><p>启动Java项目失败，控制台显示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Error starting ApplicationContext. To display the conditions report&#96;re-run your application with &#39;debug&#39; enabled.</span><br><span class="line"></span><br><span class="line">***************************</span><br><span class="line">APPLICATION FAILED TO START</span><br><span class="line">***************************</span><br><span class="line"></span><br><span class="line">Description:</span><br><span class="line"></span><br><span class="line">The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.</span><br><span class="line"></span><br><span class="line">Action:</span><br><span class="line"></span><br><span class="line">Verify the connector&#39;s configuration, identify and stop any process that&#39;s listening on port 8080, or configure this application to listen on another port.</span><br></pre></td></tr></table></figure>
+
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ul>
+<li><p>查看那些进程占用了我们的端口号<code>8080</code></p>
+<p>打开Windows控制台，输入命令</p>
+</li>
+</ul>
+<p> <code>netstat -nao | findstr &quot;8080&quot; </code></p>
+<p>  可以看到占用 <code>8080</code> 端口的进程PID为 <code>8404</code></p>
+<ul>
+<li><p>杀死相应进程：</p>
+<p>在Windows控制台，继续输入命令</p>
+</li>
+</ul>
+<p> <code>taskkill /pid 8404 /f</code></p>
+<p><img src="https://img.imgdb.cn/item/605440cc524f85ce2903d864.jpg" alt="avatar"></p>
+ 
       <!-- reward -->
       
       <div id="reword-out">
