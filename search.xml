@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Windows端口被占用解决方法</title>
+    <url>/2021/03/19/Windows%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="Error-场景"><a href="#Error-场景" class="headerlink" title="Error 场景"></a>Error 场景</h2><p>启动 Java 项目失败，控制台显示</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">Error starting ApplicationContext. To display the conditions report`re-run your application with &#x27;debug&#x27; enabled.</span><br><span class="line"></span><br><span class="line">***************************</span><br><span class="line">APPLICATION FAILED TO START</span><br><span class="line">***************************</span><br><span class="line"></span><br><span class="line">Description:</span><br><span class="line"></span><br><span class="line">The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.</span><br><span class="line"></span><br><span class="line">Action:</span><br><span class="line"></span><br><span class="line">Verify the connector&#x27;s configuration, identify and stop any process that&#x27;s listening on port 8080, or configure this application to listen on another port.</span><br></pre></td></tr></table></figure>
+
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ul>
+<li><p>查看那些进程占用了我们的端口号<code>8080</code></p>
+<p>打开 Windows 控制台，输入命令</p>
+</li>
+</ul>
+<p><code>netstat -nao | findstr &quot;8080&quot;</code></p>
+<p>可以看到占用 <code>8080</code> 端口的进程 PID 为 <code>8404</code></p>
+<ul>
+<li><p>杀死相应进程：</p>
+<p>在 Windows 控制台，继续输入命令</p>
+</li>
+</ul>
+<p><code>taskkill /pid 8404 /f</code></p>
+<p><img src="https://img.imgdb.cn/item/605440cc524f85ce2903d864.jpg" alt="avatar"></p>
+]]></content>
+      <categories>
+        <category>操作系统</category>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>端口占用</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AutoUpdater自动更新客户端</title>
     <url>/2021/03/19/AutoUpdater%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E5%AE%A2%E6%88%B7%E7%AB%AF/</url>
     <content><![CDATA[<h2 id="安装-NuGet-包"><a href="#安装-NuGet-包" class="headerlink" title="安装 NuGet 包"></a>安装 NuGet 包</h2><pre><code>在Visio studio中右击解决方案，选择管理NuGet包，搜索安装Autoupdater.NET.Official。
@@ -65,18 +94,24 @@
       </tags>
   </entry>
   <entry>
-    <title>Java类型转换工具类（持续更新）</title>
-    <url>/2021/03/19/Java%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7%E7%B1%BB%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/</url>
-    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>  将项目中用到的类型转换做个记录。</p>
-<h2 id="详细代码"><a href="#详细代码" class="headerlink" title="详细代码"></a>详细代码</h2> <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TypeUtil</span> </span>&#123;</span><br><span class="line"> <span class="comment">// [start]字符串转各种格式</span></span><br><span class="line"></span><br><span class="line"> <span class="comment">// 字符串转日期(格式:&quot;yyyyMMdd&quot;)</span></span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Date <span class="title">StrToDateFirst</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">  DateFormat format = <span class="keyword">new</span> SimpleDateFormat(<span class="string">&quot;yyyyMMdd&quot;</span>);</span><br><span class="line">  Date date = <span class="keyword">null</span>;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">   date = format.parse(str);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (ParseException e) &#123;</span><br><span class="line">   e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> date;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// 字符串转日期(格式:&quot;dd/MM/yyyy&quot;)</span></span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Date <span class="title">StrToDateSecond</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">  DateFormat format = <span class="keyword">new</span> SimpleDateFormat(<span class="string">&quot;dd/MM/yyyy&quot;</span>);</span><br><span class="line">  Date date = <span class="keyword">null</span>;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">   date = format.parse(str);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (ParseException e) &#123;</span><br><span class="line">   e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> date;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// 字符串转日期(格式:&quot;yyyy-MM-dd&quot;)</span></span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Date <span class="title">StrToDateThird</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">  DateFormat format = <span class="keyword">new</span> SimpleDateFormat(<span class="string">&quot;yyyy-MM-dd&quot;</span>);</span><br><span class="line">  Date date = <span class="keyword">null</span>;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">   date = format.parse(str);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (ParseException e) &#123;</span><br><span class="line">   e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> date;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// 字符串转日期(格式:&quot;yyyy-MM-dd HH:mm:ss&quot;)</span></span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Date <span class="title">StrToDateFourth</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">  DateFormat format = <span class="keyword">new</span> SimpleDateFormat(<span class="string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>);</span><br><span class="line">  Date date = <span class="keyword">null</span>;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">   date = format.parse(str);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (ParseException e) &#123;</span><br><span class="line">   e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> date;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// 字符串转Integer</span></span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Integer <span class="title">StrToInteger</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">  Integer integer = <span class="keyword">null</span>;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">   integer = Integer.valueOf(str);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">   e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> integer;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// 字符串转Double</span></span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Double <span class="title">StrToDouble</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">  Double double1 = <span class="number">0.00</span>;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">   double1 = Double.parseDouble(str);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">   e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> double1;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// 字符串转时间戳</span></span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Timestamp <span class="title">StrToTimeStamp</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">  Timestamp timestamp = <span class="keyword">null</span>;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">   timestamp = Timestamp.valueOf(str);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">   e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> timestamp;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// 字符串转BigDecimal</span></span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> BigDecimal <span class="title">StrTiBigdecimal</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">  BigDecimal bigDecimal = <span class="keyword">null</span>;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">   bigDecimal = <span class="keyword">new</span> BigDecimal(str);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">   e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> bigDecimal;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">// [end]</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <title>WinForm设置控件居中</title>
+    <url>/2021/03/19/WinForm%E8%AE%BE%E7%BD%AE%E6%8E%A7%E4%BB%B6%E5%B1%85%E4%B8%AD/</url>
+    <content><![CDATA[<h2 id="简单阐述"><a href="#简单阐述" class="headerlink" title="简单阐述"></a>简单阐述</h2><pre><code>在C#的WinForm里面，原生控件是没有居中属性的，故通过重写OnResize(EventArgs e)方法，通过计算，重新定位控件位置。
+</code></pre>
+<h2 id="以-Label-控件为例"><a href="#以-Label-控件为例" class="headerlink" title="以 Label 控件为例"></a>以 Label 控件为例</h2><pre><code>(1)将label的AutoSize属性设置为false；Dock属性设置为fill；TextAlign属性设置为MiddleCenter。
+(2)重写居中的代码如下：
+</code></pre>
+<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">OnResize</span>(<span class="params">EventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">            <span class="keyword">base</span>.OnResize(e);</span><br><span class="line">            <span class="built_in">int</span> x = (<span class="built_in">int</span>)(<span class="number">0.5</span> * (<span class="keyword">this</span>.Width - label1.Width));</span><br><span class="line">            <span class="built_in">int</span> y = label1.Location.Y;</span><br><span class="line">            label1.Location = <span class="keyword">new</span> System.Drawing.Point(x,y);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h2><p>[<a href="https://blog.csdn.net/mingyueyixi/article/details/55035935]">https://blog.csdn.net/mingyueyixi/article/details/55035935]</a></p>
 ]]></content>
       <categories>
-        <category>后端</category>
-        <category>Java</category>
+        <category>. Net</category>
+        <category>Winform</category>
       </categories>
       <tags>
-        <tag>类型转换</tag>
-        <tag>Utils</tag>
+        <tag>控件</tag>
+        <tag>居中</tag>
       </tags>
   </entry>
   <entry>
@@ -112,95 +147,38 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue函数防抖和函数节流</title>
-    <url>/2021/03/18/Vue%E5%87%BD%E6%95%B0%E9%98%B2%E6%8A%96%E5%92%8C%E5%87%BD%E6%95%B0%E8%8A%82%E6%B5%81/</url>
-    <content><![CDATA[<h2 id="函数防抖（debounce）"><a href="#函数防抖（debounce）" class="headerlink" title="函数防抖（debounce）"></a>函数防抖（debounce）</h2><h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ul>
-<li>登录、发短信等按钮避免用户点击太快，以致于发送了多次请求，需要防抖</li>
-<li>调整浏览器窗口大小时，resize 次数过于频繁，造成计算过多，此时需要一次到位，就用到了防抖</li>
-<li>文本编辑器实时保存，当无任何更改操作一秒后进行保存</li>
-</ul>
-<h3 id="实现方法，防抖重在清零"><a href="#实现方法，防抖重在清零" class="headerlink" title="实现方法，防抖重在清零"></a>实现方法，防抖重在清零</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">f, wait</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> timer</span><br><span class="line">    <span class="keyword">return</span> <span class="function">(<span class="params">...args</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">clearTimeout</span>(timer)</span><br><span class="line">        timer = <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            f(..args)</span><br><span class="line">        &#125;, wait)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="函数节流（throttle）"><a href="#函数节流（throttle）" class="headerlink" title="函数节流（throttle）"></a>函数节流（throttle）</h2><h3 id="应用场景-1"><a href="#应用场景-1" class="headerlink" title="应用场景"></a>应用场景</h3><ul>
-<li><code>scroll</code>事件，每隔一秒计算一次位置信息等</li>
-<li>浏览器播放事件，每隔一秒计算一次进度信息等</li>
-<li>input 框实时搜索并发送请求展示下拉列表，每隔一秒发送一次请求</li>
-</ul>
-<h4 id="实现方法，节流重在开关锁"><a href="#实现方法，节流重在开关锁" class="headerlink" title="实现方法，节流重在开关锁"></a>实现方法，节流重在开关锁</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">f, wait</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> timer</span><br><span class="line">    <span class="keyword">return</span> <span class="function">(<span class="params">..args</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (timer) &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">        timer = <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            f(..args)</span><br><span class="line">            timer = <span class="literal">null</span></span><br><span class="line">        &#125;, wait)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li>防抖：防止抖动，单位时间内事件触发会被重置，避免事件被误触发多次。代码重在清零<code>clearTimeout</code></li>
-<li>节流：控制流量，单位时间内事件只能触发一次，如果服务器端的限流即 Rate Limit。代码实现重在开锁关锁<code>timer=timeout；timer=null</code></li>
-</ul>
+    <title>Java类型转换工具类（持续更新）</title>
+    <url>/2021/03/19/Java%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7%E7%B1%BB%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>  将项目中用到的类型转换做个记录。</p>
+<h2 id="详细代码"><a href="#详细代码" class="headerlink" title="详细代码"></a>详细代码</h2> <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TypeUtil</span> </span>&#123;</span><br><span class="line"> <span class="comment">// [start]字符串转各种格式</span></span><br><span class="line"></span><br><span class="line"> <span class="comment">// 字符串转日期(格式:&quot;yyyyMMdd&quot;)</span></span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Date <span class="title">StrToDateFirst</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">  DateFormat format = <span class="keyword">new</span> SimpleDateFormat(<span class="string">&quot;yyyyMMdd&quot;</span>);</span><br><span class="line">  Date date = <span class="keyword">null</span>;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">   date = format.parse(str);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (ParseException e) &#123;</span><br><span class="line">   e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> date;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// 字符串转日期(格式:&quot;dd/MM/yyyy&quot;)</span></span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Date <span class="title">StrToDateSecond</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">  DateFormat format = <span class="keyword">new</span> SimpleDateFormat(<span class="string">&quot;dd/MM/yyyy&quot;</span>);</span><br><span class="line">  Date date = <span class="keyword">null</span>;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">   date = format.parse(str);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (ParseException e) &#123;</span><br><span class="line">   e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> date;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// 字符串转日期(格式:&quot;yyyy-MM-dd&quot;)</span></span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Date <span class="title">StrToDateThird</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">  DateFormat format = <span class="keyword">new</span> SimpleDateFormat(<span class="string">&quot;yyyy-MM-dd&quot;</span>);</span><br><span class="line">  Date date = <span class="keyword">null</span>;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">   date = format.parse(str);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (ParseException e) &#123;</span><br><span class="line">   e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> date;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// 字符串转日期(格式:&quot;yyyy-MM-dd HH:mm:ss&quot;)</span></span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Date <span class="title">StrToDateFourth</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">  DateFormat format = <span class="keyword">new</span> SimpleDateFormat(<span class="string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>);</span><br><span class="line">  Date date = <span class="keyword">null</span>;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">   date = format.parse(str);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (ParseException e) &#123;</span><br><span class="line">   e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> date;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// 字符串转Integer</span></span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Integer <span class="title">StrToInteger</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">  Integer integer = <span class="keyword">null</span>;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">   integer = Integer.valueOf(str);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">   e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> integer;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// 字符串转Double</span></span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Double <span class="title">StrToDouble</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">  Double double1 = <span class="number">0.00</span>;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">   double1 = Double.parseDouble(str);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">   e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> double1;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// 字符串转时间戳</span></span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Timestamp <span class="title">StrToTimeStamp</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">  Timestamp timestamp = <span class="keyword">null</span>;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">   timestamp = Timestamp.valueOf(str);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">   e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> timestamp;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// 字符串转BigDecimal</span></span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> BigDecimal <span class="title">StrTiBigdecimal</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">  BigDecimal bigDecimal = <span class="keyword">null</span>;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">   bigDecimal = <span class="keyword">new</span> BigDecimal(str);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">   e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> bigDecimal;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">// [end]</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>前端</category>
-        <category>Vue</category>
+        <category>后端</category>
+        <category>Java</category>
       </categories>
       <tags>
-        <tag>防抖</tag>
-        <tag>节流</tag>
+        <tag>类型转换</tag>
+        <tag>Utils</tag>
       </tags>
   </entry>
   <entry>
-    <title>WinForm设置控件居中</title>
-    <url>/2021/03/19/WinForm%E8%AE%BE%E7%BD%AE%E6%8E%A7%E4%BB%B6%E5%B1%85%E4%B8%AD/</url>
-    <content><![CDATA[<h2 id="简单阐述"><a href="#简单阐述" class="headerlink" title="简单阐述"></a>简单阐述</h2><pre><code>在C#的WinForm里面，原生控件是没有居中属性的，故通过重写OnResize(EventArgs e)方法，通过计算，重新定位控件位置。
-</code></pre>
-<h2 id="以-Label-控件为例"><a href="#以-Label-控件为例" class="headerlink" title="以 Label 控件为例"></a>以 Label 控件为例</h2><pre><code>(1)将label的AutoSize属性设置为false；Dock属性设置为fill；TextAlign属性设置为MiddleCenter。
-(2)重写居中的代码如下：
-</code></pre>
-<figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">OnResize</span>(<span class="params">EventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">            <span class="keyword">base</span>.OnResize(e);</span><br><span class="line">            <span class="built_in">int</span> x = (<span class="built_in">int</span>)(<span class="number">0.5</span> * (<span class="keyword">this</span>.Width - label1.Width));</span><br><span class="line">            <span class="built_in">int</span> y = label1.Location.Y;</span><br><span class="line">            label1.Location = <span class="keyword">new</span> System.Drawing.Point(x,y);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+    <title>维护java项目之==和equals</title>
+    <url>/2021/03/19/%E7%BB%B4%E6%8A%A4java%E9%A1%B9%E7%9B%AE%E4%B9%8B-%E5%92%8Cequals/</url>
+    <content><![CDATA[<p>最近发生一件很尴尬的事情，在维护一个 Java 项目的时候，发现有使用 <code>==</code> 来比较两个对象的属性，<br>于是顺手就把 <code>==</code> 改成了 equals。悲剧发生……</p>
+<h2 id="和-equals-的区别"><a href="#和-equals-的区别" class="headerlink" title="== 和 equals 的区别"></a><code>==</code> 和 equals 的区别</h2><p><code>==</code> ：对于基本类型来说是值比较，对于引用类型来说是引用比较<br>equals：引用比较，但一些类重写了 equals 方法，如 String、Integer 等，变成了值比较。</p>
+<h2 id="使用-equals-的前提"><a href="#使用-equals-的前提" class="headerlink" title="使用 equals 的前提"></a>使用 equals 的前提</h2><p>使用 equals 进行比较，如：<br>a 和 b 是两个对象</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">a.getId().equals(b.getId())</span><br></pre></td></tr></table></figure>
 
-<h2 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h2><p>[<a href="https://blog.csdn.net/mingyueyixi/article/details/55035935]">https://blog.csdn.net/mingyueyixi/article/details/55035935]</a></p>
+<p>需要确保 a.getId()不为 null，因为 null 是没有.equals()方法的。</p>
+<h2 id="各种对象使用-equals"><a href="#各种对象使用-equals" class="headerlink" title="各种对象使用 equals"></a>各种对象使用 equals</h2><p>String 类型：<br>可以使用 StringUtils.equals()进行比较，该方法内置非空校验<br>其余封装类型：<br>可以使用 Objects.equals()进行比较，该方法内置非空校验<br>使用三目运算符：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">a.getId() == <span class="keyword">null</span> ? b.getId() == <span class="keyword">null</span> ? <span class="keyword">false</span> : <span class="keyword">true</span> : a.getId().equals(b.getId())</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>. Net</category>
-        <category>Winform</category>
+        <category>后端</category>
+        <category>Java</category>
       </categories>
       <tags>
-        <tag>控件</tag>
-        <tag>居中</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows端口被占用解决方法</title>
-    <url>/2021/03/19/Windows%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="Error-场景"><a href="#Error-场景" class="headerlink" title="Error 场景"></a>Error 场景</h2><p>启动 Java 项目失败，控制台显示</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">Error starting ApplicationContext. To display the conditions report`re-run your application with &#x27;debug&#x27; enabled.</span><br><span class="line"></span><br><span class="line">***************************</span><br><span class="line">APPLICATION FAILED TO START</span><br><span class="line">***************************</span><br><span class="line"></span><br><span class="line">Description:</span><br><span class="line"></span><br><span class="line">The Tomcat connector configured to listen on port 8080 failed to start. The port may already be in use or the connector may be misconfigured.</span><br><span class="line"></span><br><span class="line">Action:</span><br><span class="line"></span><br><span class="line">Verify the connector&#x27;s configuration, identify and stop any process that&#x27;s listening on port 8080, or configure this application to listen on another port.</span><br></pre></td></tr></table></figure>
-
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ul>
-<li><p>查看那些进程占用了我们的端口号<code>8080</code></p>
-<p>打开 Windows 控制台，输入命令</p>
-</li>
-</ul>
-<p><code>netstat -nao | findstr &quot;8080&quot;</code></p>
-<p>可以看到占用 <code>8080</code> 端口的进程 PID 为 <code>8404</code></p>
-<ul>
-<li><p>杀死相应进程：</p>
-<p>在 Windows 控制台，继续输入命令</p>
-</li>
-</ul>
-<p><code>taskkill /pid 8404 /f</code></p>
-<p><img src="https://img.imgdb.cn/item/605440cc524f85ce2903d864.jpg" alt="avatar"></p>
-]]></content>
-      <categories>
-        <category>操作系统</category>
-        <category>Windows</category>
-      </categories>
-      <tags>
-        <tag>端口占用</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于我</title>
-    <url>/2021/03/18/about/</url>
-    <content><![CDATA[<h2 id="张凯"><a href="#张凯" class="headerlink" title="张凯"></a>张凯</h2><h2 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h2><h2 id="教育经历"><a href="#教育经历" class="headerlink" title="教育经历"></a>教育经历</h2><h2 id="工作经历"><a href="#工作经历" class="headerlink" title="工作经历"></a>工作经历</h2><h2 id="项目经历"><a href="#项目经历" class="headerlink" title="项目经历"></a>项目经历</h2><h2 id="技能清单"><a href="#技能清单" class="headerlink" title="技能清单"></a>技能清单</h2>]]></content>
-      <categories>
-        <category>个人</category>
-      </categories>
-      <tags>
-        <tag>简历</tag>
+        <tag>equals</tag>
       </tags>
   </entry>
   <entry>
@@ -280,23 +258,45 @@
       </tags>
   </entry>
   <entry>
-    <title>维护java项目之==和equals</title>
-    <url>/2021/03/19/%E7%BB%B4%E6%8A%A4java%E9%A1%B9%E7%9B%AE%E4%B9%8B-%E5%92%8Cequals/</url>
-    <content><![CDATA[<p>最近发生一件很尴尬的事情，在维护一个 Java 项目的时候，发现有使用 <code>==</code> 来比较两个对象的属性，<br>于是顺手就把 <code>==</code> 改成了 equals。悲剧发生……</p>
-<h2 id="和-equals-的区别"><a href="#和-equals-的区别" class="headerlink" title="== 和 equals 的区别"></a><code>==</code> 和 equals 的区别</h2><p><code>==</code> ：对于基本类型来说是值比较，对于引用类型来说是引用比较<br>equals：引用比较，但一些类重写了 equals 方法，如 String、Integer 等，变成了值比较。</p>
-<h2 id="使用-equals-的前提"><a href="#使用-equals-的前提" class="headerlink" title="使用 equals 的前提"></a>使用 equals 的前提</h2><p>使用 equals 进行比较，如：<br>a 和 b 是两个对象</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">a.getId().equals(b.getId())</span><br></pre></td></tr></table></figure>
-
-<p>需要确保 a.getId()不为 null，因为 null 是没有.equals()方法的。</p>
-<h2 id="各种对象使用-equals"><a href="#各种对象使用-equals" class="headerlink" title="各种对象使用 equals"></a>各种对象使用 equals</h2><p>String 类型：<br>可以使用 StringUtils.equals()进行比较，该方法内置非空校验<br>其余封装类型：<br>可以使用 Objects.equals()进行比较，该方法内置非空校验<br>使用三目运算符：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">a.getId() == <span class="keyword">null</span> ? b.getId() == <span class="keyword">null</span> ? <span class="keyword">false</span> : <span class="keyword">true</span> : a.getId().equals(b.getId())</span><br></pre></td></tr></table></figure>
-]]></content>
+    <title>关于我</title>
+    <url>/2021/03/18/about/</url>
+    <content><![CDATA[<h2 id="张凯"><a href="#张凯" class="headerlink" title="张凯"></a>张凯</h2><h2 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h2><h2 id="教育经历"><a href="#教育经历" class="headerlink" title="教育经历"></a>教育经历</h2><h2 id="工作经历"><a href="#工作经历" class="headerlink" title="工作经历"></a>工作经历</h2><h2 id="项目经历"><a href="#项目经历" class="headerlink" title="项目经历"></a>项目经历</h2><h2 id="技能清单"><a href="#技能清单" class="headerlink" title="技能清单"></a>技能清单</h2>]]></content>
       <categories>
-        <category>后端</category>
-        <category>Java</category>
+        <category>个人</category>
       </categories>
       <tags>
-        <tag>equals</tag>
+        <tag>简历</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue函数防抖和函数节流</title>
+    <url>/2021/03/18/Vue%E5%87%BD%E6%95%B0%E9%98%B2%E6%8A%96%E5%92%8C%E5%87%BD%E6%95%B0%E8%8A%82%E6%B5%81/</url>
+    <content><![CDATA[<h2 id="函数防抖（debounce）"><a href="#函数防抖（debounce）" class="headerlink" title="函数防抖（debounce）"></a>函数防抖（debounce）</h2><h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ul>
+<li>登录、发短信等按钮避免用户点击太快，以致于发送了多次请求，需要防抖</li>
+<li>调整浏览器窗口大小时，resize 次数过于频繁，造成计算过多，此时需要一次到位，就用到了防抖</li>
+<li>文本编辑器实时保存，当无任何更改操作一秒后进行保存</li>
+</ul>
+<h3 id="实现方法，防抖重在清零"><a href="#实现方法，防抖重在清零" class="headerlink" title="实现方法，防抖重在清零"></a>实现方法，防抖重在清零</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">f, wait</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> timer</span><br><span class="line">    <span class="keyword">return</span> <span class="function">(<span class="params">...args</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">clearTimeout</span>(timer)</span><br><span class="line">        timer = <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            f(..args)</span><br><span class="line">        &#125;, wait)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="函数节流（throttle）"><a href="#函数节流（throttle）" class="headerlink" title="函数节流（throttle）"></a>函数节流（throttle）</h2><h3 id="应用场景-1"><a href="#应用场景-1" class="headerlink" title="应用场景"></a>应用场景</h3><ul>
+<li><code>scroll</code>事件，每隔一秒计算一次位置信息等</li>
+<li>浏览器播放事件，每隔一秒计算一次进度信息等</li>
+<li>input 框实时搜索并发送请求展示下拉列表，每隔一秒发送一次请求</li>
+</ul>
+<h4 id="实现方法，节流重在开关锁"><a href="#实现方法，节流重在开关锁" class="headerlink" title="实现方法，节流重在开关锁"></a>实现方法，节流重在开关锁</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">f, wait</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> timer</span><br><span class="line">    <span class="keyword">return</span> <span class="function">(<span class="params">..args</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (timer) &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">        timer = <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            f(..args)</span><br><span class="line">            timer = <span class="literal">null</span></span><br><span class="line">        &#125;, wait)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>防抖：防止抖动，单位时间内事件触发会被重置，避免事件被误触发多次。代码重在清零<code>clearTimeout</code></li>
+<li>节流：控制流量，单位时间内事件只能触发一次，如果服务器端的限流即 Rate Limit。代码实现重在开锁关锁<code>timer=timeout；timer=null</code></li>
+</ul>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>防抖</tag>
+        <tag>节流</tag>
       </tags>
   </entry>
 </search>
