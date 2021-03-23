@@ -6,7 +6,7 @@
   <link href="https://zhkaif.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhkaif.github.io/"/>
-  <updated>2021-03-19T07:21:06.669Z</updated>
+  <updated>2021-03-23T02:06:20.880Z</updated>
   <id>https://zhkaif.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>BIO/NIO/AIO对比</title>
+    <link href="https://zhkaif.github.io/2021/03/22/BIO-NIO-AIO%E5%AF%B9%E6%AF%94/"/>
+    <id>https://zhkaif.github.io/2021/03/22/BIO-NIO-AIO%E5%AF%B9%E6%AF%94/</id>
+    <published>2021-03-22T02:14:29.000Z</published>
+    <updated>2021-03-23T02:06:20.880Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;IO-模型&quot;&gt;&lt;a href=&quot;#IO-模型&quot; class=&quot;headerlink&quot; title=&quot;IO 模型&quot;&gt;&lt;/a&gt;IO 模型&lt;/h2&gt;&lt;p&gt;就是使用什么样的通道进行数据的发送和接收，很大程度上决定了程序通信的性能。&lt;br&gt;Java</summary>
+        
+      
+    
+    
+    
+    <category term="后端" scheme="https://zhkaif.github.io/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    <category term="Java" scheme="https://zhkaif.github.io/categories/%E5%90%8E%E7%AB%AF/Java/"/>
+    
+    
+    <category term="IO模型" scheme="https://zhkaif.github.io/tags/IO%E6%A8%A1%E5%9E%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>Windows端口被占用解决方法</title>
@@ -165,7 +192,7 @@
     <link href="https://zhkaif.github.io/2021/03/19/Java%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7%E7%B1%BB%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/"/>
     <id>https://zhkaif.github.io/2021/03/19/Java%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7%E7%B1%BB%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%EF%BC%89/</id>
     <published>2021-03-19T03:08:23.000Z</published>
-    <updated>2021-03-19T07:10:07.304Z</updated>
+    <updated>2021-03-22T02:15:41.914Z</updated>
     
     
       
