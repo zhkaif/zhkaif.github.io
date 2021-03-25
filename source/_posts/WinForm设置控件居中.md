@@ -5,7 +5,7 @@ tags:
   - 控件
   - 居中
 
-categories: [. Net, Winform]
+categories: [.Net, Winform]
 ---
 
 ## 简单阐述
@@ -17,7 +17,7 @@ categories: [. Net, Winform]
     (1)将label的AutoSize属性设置为false；Dock属性设置为fill；TextAlign属性设置为MiddleCenter。
     (2)重写居中的代码如下：
 
-``` c#
+``` C#
 protected override void OnResize(EventArgs e)
     {
             base.OnResize(e);
