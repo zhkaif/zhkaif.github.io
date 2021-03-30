@@ -60,4 +60,4 @@ categories: [.Net, Winform]
 
 ## 参考地址
 
-[https://github.com/ravibpatel/AutoUpdater.NET]
+<https://github.com/ravibpatel/AutoUpdater.NET>
