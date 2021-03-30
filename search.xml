@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Java交换数组元素</title>
+    <url>/2021/03/30/Java%E4%BA%A4%E6%8D%A2%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0/</url>
+    <content><![CDATA[<h2 id="Java-交换数组元素"><a href="#Java-交换数组元素" class="headerlink" title="Java 交换数组元素"></a>Java 交换数组元素</h2><h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"><span class="keyword">import</span> java.util.Collections;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.stream.Collectors;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> zhkai</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2021年3月30日14:09:29</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SwapElement</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 将数组下标为i和数组下标为j的两个数组元素进行交换</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> nums 待交换数组</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> i    需交换下标</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> j    需交换下标</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 交换后的数组</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] swapElementOne(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> i, <span class="keyword">int</span> j) &#123;</span><br><span class="line">        <span class="keyword">int</span> item = nums[i];</span><br><span class="line">        nums[i] = nums[j];</span><br><span class="line">        nums[j] = item;</span><br><span class="line">        <span class="keyword">return</span> nums;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 将数组下标为i和数组下标为j的两个数组元素进行交换</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> nums 待交换数组</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> i    需交换下标</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> j    需交换下标</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 交换后的数组</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] swapElementTwo(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> i, <span class="keyword">int</span> j) &#123;</span><br><span class="line">        List&lt;Integer&gt; item = Arrays.stream(nums).boxed().collect(Collectors.toList());</span><br><span class="line">        Collections.swap(item, i, j);</span><br><span class="line">        <span class="keyword">int</span>[] result = item.stream().mapToInt(Integer::valueOf).toArray();</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 将数组下标为i和数组下标为j的两个数组元素进行交换</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> nums 待交换数组</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> i    需交换下标</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> j    需交换下标</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 交换后的数组</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] swapElementThree(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> i, <span class="keyword">int</span> j) &#123;</span><br><span class="line">        nums[i] ^= nums[j];</span><br><span class="line">        nums[j] ^= nums[i];</span><br><span class="line">        nums[i] ^= nums[j];</span><br><span class="line">        <span class="keyword">return</span> nums;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="效率对比"><a href="#效率对比" class="headerlink" title="效率对比"></a>效率对比</h3><figure class="highlight text"><table><tr><td class="code"><pre><span class="line">输入：nums = &#123;1, 2, 3, 4&#125;; i=1; j=3;</span><br><span class="line">方法一：2420500ns</span><br><span class="line">方法二：163113800ns</span><br><span class="line">方法三：20200ns</span><br></pre></td></tr></table></figure>
+
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>方法一：<br>  使用中间变量进行交换，不能直接进行交换。</li>
+<li>方法二：<br>  使用Collections.swap()方法进行交换，需要先将数组转换成List，交换完成后再转换成数组返回。</li>
+<li>方法三：<br>  使用位运算符进行交换。<br>  ^：如果相对应位值相同，则结果为0，否则为1<br>  <code>C ^= C1 等价于 C = C^C1</code></li>
+</ul>
+]]></content>
+      <categories>
+        <category>后端</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>数组</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode缺失的第一个正数</title>
     <url>/2021/03/29/LeetCode%E7%BC%BA%E5%A4%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%AD%A3%E6%95%B0/</url>
     <content><![CDATA[<h2 id="LeetCode-缺失的第一个正数"><a href="#LeetCode-缺失的第一个正数" class="headerlink" title="LeetCode 缺失的第一个正数"></a>LeetCode 缺失的第一个正数</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给你一个未排序的整数数组 nums，请你找出其中没有出现的最小的正整数。</p>
@@ -27,8 +48,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>数组</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -58,8 +79,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>数组</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -82,8 +103,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>数组</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -419,8 +440,8 @@
         <category>Winform</category>
       </categories>
       <tags>
-        <tag>AutoUpdater</tag>
         <tag>客户端</tag>
+        <tag>AutoUpdater</tag>
       </tags>
   </entry>
   <entry>
@@ -447,8 +468,8 @@
         <category>Winform</category>
       </categories>
       <tags>
-        <tag>客户端</tag>
         <tag>CefSharp</tag>
+        <tag>客户端</tag>
       </tags>
   </entry>
   <entry>
