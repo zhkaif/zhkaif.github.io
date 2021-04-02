@@ -6,7 +6,7 @@
   <link href="https://zhkaif.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhkaif.github.io/"/>
-  <updated>2021-03-31T06:03:52.504Z</updated>
+  <updated>2021-04-02T03:23:10.270Z</updated>
   <id>https://zhkaif.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JVM结构详解</title>
+    <link href="https://zhkaif.github.io/2021/03/31/JVM%E7%BB%93%E6%9E%84%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://zhkaif.github.io/2021/03/31/JVM%E7%BB%93%E6%9E%84%E8%AF%A6%E8%A7%A3/</id>
+    <published>2021-03-31T06:36:40.000Z</published>
+    <updated>2021-04-02T03:23:10.270Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;JVM-结构详解&quot;&gt;&lt;a href=&quot;#JVM-结构详解&quot; class=&quot;headerlink&quot; title=&quot;JVM 结构详解&quot;&gt;&lt;/a&gt;JVM 结构详解&lt;/h2&gt;&lt;h3 id=&quot;JVM-结构图&quot;&gt;&lt;a href=&quot;#JVM-结构图&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="后端" scheme="https://zhkaif.github.io/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    <category term="Java" scheme="https://zhkaif.github.io/categories/%E5%90%8E%E7%AB%AF/Java/"/>
+    
+    
+    <category term="JVM" scheme="https://zhkaif.github.io/tags/JVM/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode一维数组的动态和</title>
