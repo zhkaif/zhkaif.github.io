@@ -796,7 +796,86 @@
   <entry>
     <title>关于我</title>
     <url>/2021/03/18/about/</url>
-    <content><![CDATA[<h2 id="张凯"><a href="#张凯" class="headerlink" title="张凯"></a>张凯</h2><h2 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h2><h2 id="教育经历"><a href="#教育经历" class="headerlink" title="教育经历"></a>教育经历</h2><h2 id="工作经历"><a href="#工作经历" class="headerlink" title="工作经历"></a>工作经历</h2><h2 id="项目经历"><a href="#项目经历" class="headerlink" title="项目经历"></a>项目经历</h2><h2 id="技能清单"><a href="#技能清单" class="headerlink" title="技能清单"></a>技能清单</h2>]]></content>
+    <content><![CDATA[<h2 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h2><ul>
+<li>张凯/男/1996</li>
+<li>本科/淮阴工学院（计算机科学与技术专业）</li>
+<li>工作年限：3 年</li>
+<li>技术博客：<a href="https://zhkaif.github.io/">https://zhkaif.github.io/</a></li>
+<li>期望职位：Java 开发</li>
+<li>期望薪资：税前月薪 15K~20K，特别喜欢的公司或者徐州可谈</li>
+<li>期望城市：南京或徐州</li>
+</ul>
+<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
+<li>手机：13182353591</li>
+<li>邮箱：<a href="mailto:&#50;&#x35;&#55;&#50;&#x34;&#50;&#57;&#50;&#51;&#53;&#x40;&#x71;&#113;&#x2e;&#99;&#x6f;&#x6d;">&#50;&#x35;&#55;&#50;&#x34;&#50;&#57;&#50;&#51;&#53;&#x40;&#x71;&#113;&#x2e;&#99;&#x6f;&#x6d;</a></li>
+<li>QQ/微信手机号：2572429235/13182353591</li>
+</ul>
+<h2 id="工作经历"><a href="#工作经历" class="headerlink" title="工作经历"></a>工作经历</h2><p>南京联迪信息股份有限公司（2018 年 6 月~至今）</p>
+<h3 id="3M-POS-数据收集系统（2020-年-10-月-至今）"><a href="#3M-POS-数据收集系统（2020-年-10-月-至今）" class="headerlink" title="3M POS 数据收集系统（2020 年 10 月~至今）"></a>3M POS 数据收集系统（2020 年 10 月~至今）</h3><p>帮助 3M 公司使用系统自动处理经销商的销售数据。<br>包括对数据的自动定时抽取上传、校验、转换等基础，以及错误数据回滚、经销商管理、日志管理等配套功能。</p>
+<h4 id="职责"><a href="#职责" class="headerlink" title="职责"></a>职责</h4><ul>
+<li>WEB 端的金税抽取规则设置功能、数据回滚功能、客户端版本管理功能的前后端开发。</li>
+<li>客户端开发，包括数据定时自动抽取、根据 WEB 页面配置的规则进行数据校验和过滤、指定时间的数据补抓重抓、客户端自动更新功能。</li>
+<li>经销商上线的对接，远程指导经销商安装客户端配置定时抓取任务。</li>
+<li>系统操作手册和客户端安装手册的编写。</li>
+<li>系统后续功能的开发和运维工作。</li>
+</ul>
+<h4 id="项目总结"><a href="#项目总结" class="headerlink" title="项目总结"></a>项目总结</h4><h5 id="使用技术"><a href="#使用技术" class="headerlink" title="使用技术"></a>使用技术</h5><ul>
+<li>WEB：Vue + Element-ui</li>
+<li>API：SpringBoot + Jpa + Hibernate + Swagger</li>
+<li>数据库：SQLSERVER</li>
+<li>客户端：Winform + Cefsharp</li>
+<li>此外，安装过程中对 Windows 系统的了解加深，任务计划程序在各种操作系统的配置、管理员权限的配置和取得、多种防护软件的设置。</li>
+</ul>
+<h5 id="业绩成果"><a href="#业绩成果" class="headerlink" title="业绩成果"></a>业绩成果</h5><p>目前已经成功上线 7 家经销商，后续上线正则有序进行，2021 年计划上线 100 家经销商。</p>
+<h3 id="ANA-航空到着案内（2019-年-11-月-2020-年-6-月）"><a href="#ANA-航空到着案内（2019-年-11-月-2020-年-6-月）" class="headerlink" title="ANA 航空到着案内（2019 年 11 月~2020 年 6 月）"></a>ANA 航空到着案内（2019 年 11 月~2020 年 6 月）</h3><p>面向 ANA 航空公司的乘客提供航班查询以及提示等服务的 PWA 应用。</p>
+<ul>
+<li>在线查询航班并将所查航班信息发送到邮箱服务</li>
+<li>个人航班履历查询功能，安装已乘坐和未乘坐进行分类展示。</li>
+<li>航班提示功能，包括邮箱提示和网页通过操作系统发起的提示。</li>
+<li>航空公司新闻和注意事项提示信息的展示</li>
+<li>Web 端管理新闻和注意事项</li>
+</ul>
+<h4 id="职责-1"><a href="#职责-1" class="headerlink" title="职责"></a>职责</h4><ul>
+<li>后台管理系统的前后端开发，对 PWA 提供的航空新闻和注意事项以及乘客的反馈进行管理。</li>
+<li>航班查询页面的开发。</li>
+<li>为适应手机、平板、WEB 对多个页面进行调整。</li>
+<li>测试式样书的编写。</li>
+</ul>
+<h4 id="项目总结-1"><a href="#项目总结-1" class="headerlink" title="项目总结"></a>项目总结</h4><h5 id="使用技术-1"><a href="#使用技术-1" class="headerlink" title="使用技术"></a>使用技术</h5><ul>
+<li>WEB：Kony + Node.js</li>
+<li>API：JavaService</li>
+<li>数据库：Mysql</li>
+<li>收获：进一步理解了 Kony 的开发生态圈，并通过 Kony 的云平台发布后端的 API，很便捷。</li>
+</ul>
+<h3 id="爬虫开发与部署"><a href="#爬虫开发与部署" class="headerlink" title="爬虫开发与部署"></a>爬虫开发与部署</h3><p>使用 Scrapy 框架对 Nikkei、中商情报网、Yahoo 以及 3GPP 等网站进行数据的爬取，并发布到 Crawlab 平台进行定时执行。</p>
+<h3 id="职责-2"><a href="#职责-2" class="headerlink" title="职责"></a>职责</h3><ul>
+<li>Nikkei 爬虫、中商情报网爬虫、Yahoo 爬虫、3GPP 爬虫的编写</li>
+<li>爬虫发布到部署好的 Crawlab 定期执行</li>
+<li>3GPP 爬虫运行情况以及爬取数据 Size 的邮箱通知功能</li>
+</ul>
+<h4 id="项目总结-2"><a href="#项目总结-2" class="headerlink" title="项目总结"></a>项目总结</h4><h5 id="使用技术-2"><a href="#使用技术-2" class="headerlink" title="使用技术"></a>使用技术</h5><ul>
+<li>爬虫：Python + Scrapy</li>
+<li>数据库：MongoDB + ElasticSearch + Redis</li>
+<li>发布平台：crawlab</li>
+<li>收获：更熟悉 Python，学会了多种存储方式以及各自的优势。反爬虫的初步了解和应对方法。</li>
+</ul>
+<h3 id="ElasticSearch-管理及新闻检索平台"><a href="#ElasticSearch-管理及新闻检索平台" class="headerlink" title="ElasticSearch 管理及新闻检索平台"></a>ElasticSearch 管理及新闻检索平台</h3><p>将 ElasticSearch 的查询文档、创建索引、更新索引、索引的分词和同义词设置等 API 通过界面进行可视化操作。</p>
+<h3 id="职责-3"><a href="#职责-3" class="headerlink" title="职责"></a>职责</h3><p>整个项目的搭建和前后台开发。</p>
+<h4 id="项目总结-3"><a href="#项目总结-3" class="headerlink" title="项目总结"></a>项目总结</h4><h5 id="使用技术-3"><a href="#使用技术-3" class="headerlink" title="使用技术"></a>使用技术</h5><ul>
+<li>WEB：Vue + Elemen-ui</li>
+<li>API：Python + FastApi</li>
+<li>数据库：Mysql + ElasticSearch</li>
+<li>收获：加深了对于ES的了解和使用，学会了使用FastApi进行后台的开发。</li>
+</ul>
+<h2 id="技能清单"><a href="#技能清单" class="headerlink" title="技能清单"></a>技能清单</h2><ul>
+<li>开发语言：Java/C#/Python</li>
+<li>前端框架：Vue</li>
+<li>数据库相关：MySQL/SQLSERVER/MongoDB/ES</li>
+<li>版本管理：Git/Svn</li>
+<li>单元测试：Junit/Pytest</li>
+<li>开发工具：Idea/STS/VsCode</li>
+</ul>
+]]></content>
       <categories>
         <category>个人</category>
       </categories>
