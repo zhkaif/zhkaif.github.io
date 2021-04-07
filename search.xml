@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>双向绑定和单向绑定</title>
+    <url>/2021/04/07/%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E5%92%8C%E5%8D%95%E5%90%91%E7%BB%91%E5%AE%9A/</url>
+    <content><![CDATA[<h2 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h2><p>所谓数据绑定，就是指<code>View</code>层和<code>Model</code>层之间的映射关系</p>
+<h3 id="单向绑定"><a href="#单向绑定" class="headerlink" title="单向绑定"></a>单向绑定</h3><p><code>Model</code>的更新会触发 View 的更新，而 View 的更新不会触发<code>Model</code>的更新，它们的作用是单向的。</p>
+<h3 id="双向绑定"><a href="#双向绑定" class="headerlink" title="双向绑定"></a>双向绑定</h3><p><code>Model</code>的更新会触发<code>View</code>的更新，<code>View</code>的更新也会触发<code>Model</code>的更新，它们的作用是相互的。</p>
+<p><img src="https://img.imgdb.cn/item/606d43ca8322e6675caf6c70.jpg" alt="avatar"></p>
+<h3 id="React-采用单向数据绑定"><a href="#React-采用单向数据绑定" class="headerlink" title="React 采用单向数据绑定"></a>React 采用单向数据绑定</h3><p><img src="https://img.imgdb.cn/item/606d441d8322e6675caffcc3.jpg" alt="avatar"><br>当用户访问<code>View</code>时，通过触发<code>Events</code>进行交互，而在相应<code>Events Handlers</code>中，会触发相应的<code>Actions</code>，而<code>Actions</code>通过调用<code>setState</code>方法对<code>View</code>的<code>State</code>进行更新，<code>State</code>更新后会触发<code>View</code>的重新渲染。</p>
+<p>单向数据绑定的优缺点：<br>优点：所有状态都可以被记录、跟踪，状态变化通过手动调用触发，源头易追溯。<br>缺点：会有很多类似的样板代码，代码量会相应的上升。</p>
+<h3 id="Vue-支持单向数据绑定和双向数据绑定"><a href="#Vue-支持单向数据绑定和双向数据绑定" class="headerlink" title="Vue 支持单向数据绑定和双向数据绑定"></a>Vue 支持单向数据绑定和双向数据绑定</h3><ul>
+<li>单项数据绑定：使用<code>v-bind</code>属性绑定、<code>v-on</code>事件绑定或插值形式<code>&#123;&#123;data&#125;&#125;</code>。</li>
+<li>双向数据绑定：使用<code>v-model</code>指令，用户对<code>View</code>的更改会直接同步到<code>Model</code>。</li>
+</ul>
+<p>Vue 的双向数据绑定就是指使用<code>v-model</code>指令进行数据绑定，而<code>v-model</code>本质上是<code>v-bind</code>和<code>v-on</code>相结合的语法糖，是框架自动帮我们实现了更新事件。换句话说，我们完全可以采用单向绑定，自己实现类似的双向数据绑定。</p>
+<p>双向数据绑定的优缺点：</p>
+<p>优点：在操作表单时使用<code>v-model</code>方便简单，可以省略繁琐或重复的<code>onChange</code>事件去处理每个表单数据的变化（减少代码量）。<br>缺点：属于暗箱操作，无法很好的追踪双向绑定的数据变化。</p>
+<h3 id="Angular-支持单向数据绑定和双向数据绑定"><a href="#Angular-支持单向数据绑定和双向数据绑定" class="headerlink" title="Angular 支持单向数据绑定和双向数据绑定"></a>Angular 支持单向数据绑定和双向数据绑定</h3><ul>
+<li>单向数据绑定：使用<code>[x]</code>属性绑定，<code>(x)</code>事件绑定或插值形式<code>&#123;&#123;data&#125;&#125;</code>。</li>
+<li>双向数据绑定：使用<code>[(x)]</code>语法，用户对<code>View</code>的更改会直接同步到<code>Model</code>。</li>
+</ul>
+<h3 id="AngularJS-支持单向数据绑定和双向数据绑定"><a href="#AngularJS-支持单向数据绑定和双向数据绑定" class="headerlink" title="AngularJS 支持单向数据绑定和双向数据绑定"></a>AngularJS 支持单向数据绑定和双向数据绑定</h3><ul>
+<li>单向数据绑定：使用<code>ng-bind</code>指令或插值形式<code>&#123;&#123;data&#125;&#125;</code>。</li>
+<li>双向数据绑定：使用<code>ng-model</code>指令，用户对<code>View</code>的更改会直接同步到<code>Model</code>。</li>
+</ul>
+<h2 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h2><p><a href="https://juejin.cn/post/6854573208646090765">https://juejin.cn/post/6854573208646090765</a></p>
+]]></content>
+      <categories>
+        <category>前端</category>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>双向绑定</tag>
+        <tag>单向绑定</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode子矩形查询</title>
     <url>/2021/04/07/LeetCode%E5%AD%90%E7%9F%A9%E5%BD%A2%E6%9F%A5%E8%AF%A2/</url>
     <content><![CDATA[<h2 id="LeetCode-子矩形查询"><a href="#LeetCode-子矩形查询" class="headerlink" title="LeetCode 子矩形查询"></a>LeetCode 子矩形查询</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>请你实现一个类<code>SubrectangleQueries</code>，它的构造函数的参数是一个<code>rows * cols</code>的矩形（这里用整数矩阵表示），并支持以下两种操作：</p>
@@ -834,7 +869,7 @@
 </ul>
 <h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
 <li>手机：13182353591</li>
-<li>邮箱：<a href="mailto:&#x32;&#53;&#x37;&#x32;&#x34;&#50;&#57;&#x32;&#x33;&#x35;&#x40;&#x71;&#x71;&#x2e;&#x63;&#x6f;&#109;">&#x32;&#53;&#x37;&#x32;&#x34;&#50;&#57;&#x32;&#x33;&#x35;&#x40;&#x71;&#x71;&#x2e;&#x63;&#x6f;&#109;</a></li>
+<li>邮箱：<a href="mailto:&#x32;&#53;&#55;&#50;&#x34;&#50;&#57;&#x32;&#x33;&#53;&#x40;&#113;&#x71;&#46;&#x63;&#x6f;&#x6d;">&#x32;&#53;&#55;&#50;&#x34;&#50;&#57;&#x32;&#x33;&#53;&#x40;&#113;&#x71;&#46;&#x63;&#x6f;&#x6d;</a></li>
 <li>QQ/微信手机号：2572429235/13182353591</li>
 </ul>
 <h2 id="工作经历"><a href="#工作经历" class="headerlink" title="工作经历"></a>工作经历</h2><p>南京联迪信息股份有限公司（2018 年 6 月~至今）</p>

@@ -9,7 +9,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-     于北往南 Blog&#39;s
+    双向绑定和单向绑定 |  于北往南 Blog&#39;s
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -39,110 +39,9 @@
     
       
     <main class="content on">
-      
-<section class="cover">
-    
-      
-      <a class="forkMe" href="https://github.com/zhkaif"
-        target="_blank"><img width="149" height="149" src="/images/forkme.png"
-          class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
-    
-  <div class="cover-frame">
-    <div class="bg-box">
-      <img src="/images/cover1.jpg" alt="image frame" />
-    </div>
-    <div class="cover-inner text-center text-white">
-      <h1><a href="/">于北往南 Blog&#39;s</a></h1>
-      <div id="subtitle-box">
-        
-        <span id="subtitle"></span>
-        
-      </div>
-      <div>
-        
-      </div>
-    </div>
-  </div>
-  <div class="cover-learn-more">
-    <a href="javascript:void(0)" class="anchor"><i class="ri-arrow-down-line"></i></a>
-  </div>
-</section>
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
-
-
-<!-- Subtitle -->
-
-  <script>
-    try {
-      var typed = new Typed("#subtitle", {
-        strings: ['昨夜西风凋碧树。独上高楼，望尽天涯路', '衣带渐宽终不悔，为伊消得人憔悴', '众里寻他千百度，蓦然回首，那人却在，灯火阑珊处'],
-        startDelay: 0,
-        typeSpeed: 200,
-        loop: true,
-        backSpeed: 100,
-        showCursor: true
-      });
-    } catch (err) {
-      console.log(err)
-    }
-  </script>
-  
-<div id="main">
-  <section class="outer">
-  
-  
-  
-
-<div class="notice" style="margin-top:50px">
-    <i class="ri-heart-fill"></i>
-    <div class="notice-content" id="broad"></div>
-</div>
-<script type="text/javascript">
-    fetch('https://v1.hitokoto.cn')
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById("broad").innerHTML = data.hitokoto;
-        })
-        .catch(console.error)
-</script>
-
-<style>
-    .notice {
-        padding: 20px;
-        border: 1px dashed #e6e6e6;
-        color: #969696;
-        position: relative;
-        display: inline-block;
-        width: 100%;
-        background: #fbfbfb50;
-        border-radius: 10px;
-    }
-
-    .notice i {
-        float: left;
-        color: #999;
-        font-size: 16px;
-        padding-right: 10px;
-        vertical-align: middle;
-        margin-top: -2px;
-    }
-
-    .notice-content {
-        display: initial;
-        vertical-align: middle;
-    }
-</style>
-  
-  <article class="articles">
-    
-    
-    
-    
-    <article
-  id="post-about"
+      <section class="outer">
+  <article
+  id="post-双向绑定和单向绑定"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -152,97 +51,246 @@
     
     <header class="article-header">
        
-<h2 itemprop="name">
-  <a class="article-title" href="/2021/03/18/about/"
-    >关于我</a> 
-</h2>
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  双向绑定和单向绑定
+</h1>
  
 
     </header>
      
     <div class="article-meta">
-      <a href="/2021/03/18/about/" class="article-date">
-  <time datetime="2021-03-18T09:44:17.000Z" itemprop="datePublished">2021-03-18</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E4%B8%AA%E4%BA%BA/">个人</a>
-  </div>
-   
-    </div>
-       
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%80%E5%8E%86/" rel="tag">简历</a></li></ul>
-
-    </footer>
-  </div>
-
-   
-    
-  
-</article>
-
-    
-    <article
-  id="post-Vue函数防抖和函数节流"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2021/03/18/Vue%E5%87%BD%E6%95%B0%E9%98%B2%E6%8A%96%E5%92%8C%E5%87%BD%E6%95%B0%E8%8A%82%E6%B5%81/"
-    >Vue函数防抖和函数节流</a> 
-</h2>
- 
-
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2021/03/18/Vue%E5%87%BD%E6%95%B0%E9%98%B2%E6%8A%96%E5%92%8C%E5%87%BD%E6%95%B0%E8%8A%82%E6%B5%81/" class="article-date">
-  <time datetime="2021-03-18T09:40:22.000Z" itemprop="datePublished">2021-03-18</time>
+      <a href="/2021/04/07/%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E5%92%8C%E5%8D%95%E5%90%91%E7%BB%91%E5%AE%9A/" class="article-date">
+  <time datetime="2021-04-07T05:15:40.000Z" itemprop="datePublished">2021-04-07</time>
 </a> 
   <div class="article-category">
     <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a> / <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/Vue/">Vue</a>
   </div>
-   
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">598</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">2 分钟</span>
+        </span>
+    </span>
+</div>
+ 
     </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
        
+  <h2 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h2><p>所谓数据绑定，就是指<code>View</code>层和<code>Model</code>层之间的映射关系</p>
+<h3 id="单向绑定"><a href="#单向绑定" class="headerlink" title="单向绑定"></a>单向绑定</h3><p><code>Model</code>的更新会触发 View 的更新，而 View 的更新不会触发<code>Model</code>的更新，它们的作用是单向的。</p>
+<h3 id="双向绑定"><a href="#双向绑定" class="headerlink" title="双向绑定"></a>双向绑定</h3><p><code>Model</code>的更新会触发<code>View</code>的更新，<code>View</code>的更新也会触发<code>Model</code>的更新，它们的作用是相互的。</p>
+<p><img src="https://img.imgdb.cn/item/606d43ca8322e6675caf6c70.jpg" alt="avatar"></p>
+<h3 id="React-采用单向数据绑定"><a href="#React-采用单向数据绑定" class="headerlink" title="React 采用单向数据绑定"></a>React 采用单向数据绑定</h3><p><img src="https://img.imgdb.cn/item/606d441d8322e6675caffcc3.jpg" alt="avatar"><br>当用户访问<code>View</code>时，通过触发<code>Events</code>进行交互，而在相应<code>Events Handlers</code>中，会触发相应的<code>Actions</code>，而<code>Actions</code>通过调用<code>setState</code>方法对<code>View</code>的<code>State</code>进行更新，<code>State</code>更新后会触发<code>View</code>的重新渲染。</p>
+<p>单向数据绑定的优缺点：<br>优点：所有状态都可以被记录、跟踪，状态变化通过手动调用触发，源头易追溯。<br>缺点：会有很多类似的样板代码，代码量会相应的上升。</p>
+<h3 id="Vue-支持单向数据绑定和双向数据绑定"><a href="#Vue-支持单向数据绑定和双向数据绑定" class="headerlink" title="Vue 支持单向数据绑定和双向数据绑定"></a>Vue 支持单向数据绑定和双向数据绑定</h3><ul>
+<li>单项数据绑定：使用<code>v-bind</code>属性绑定、<code>v-on</code>事件绑定或插值形式<code>&#123;&#123;data&#125;&#125;</code>。</li>
+<li>双向数据绑定：使用<code>v-model</code>指令，用户对<code>View</code>的更改会直接同步到<code>Model</code>。</li>
+</ul>
+<p>Vue 的双向数据绑定就是指使用<code>v-model</code>指令进行数据绑定，而<code>v-model</code>本质上是<code>v-bind</code>和<code>v-on</code>相结合的语法糖，是框架自动帮我们实现了更新事件。换句话说，我们完全可以采用单向绑定，自己实现类似的双向数据绑定。</p>
+<p>双向数据绑定的优缺点：</p>
+<p>优点：在操作表单时使用<code>v-model</code>方便简单，可以省略繁琐或重复的<code>onChange</code>事件去处理每个表单数据的变化（减少代码量）。<br>缺点：属于暗箱操作，无法很好的追踪双向绑定的数据变化。</p>
+<h3 id="Angular-支持单向数据绑定和双向数据绑定"><a href="#Angular-支持单向数据绑定和双向数据绑定" class="headerlink" title="Angular 支持单向数据绑定和双向数据绑定"></a>Angular 支持单向数据绑定和双向数据绑定</h3><ul>
+<li>单向数据绑定：使用<code>[x]</code>属性绑定，<code>(x)</code>事件绑定或插值形式<code>&#123;&#123;data&#125;&#125;</code>。</li>
+<li>双向数据绑定：使用<code>[(x)]</code>语法，用户对<code>View</code>的更改会直接同步到<code>Model</code>。</li>
+</ul>
+<h3 id="AngularJS-支持单向数据绑定和双向数据绑定"><a href="#AngularJS-支持单向数据绑定和双向数据绑定" class="headerlink" title="AngularJS 支持单向数据绑定和双向数据绑定"></a>AngularJS 支持单向数据绑定和双向数据绑定</h3><ul>
+<li>单向数据绑定：使用<code>ng-bind</code>指令或插值形式<code>&#123;&#123;data&#125;&#125;</code>。</li>
+<li>双向数据绑定：使用<code>ng-model</code>指令，用户对<code>View</code>的更改会直接同步到<code>Model</code>。</li>
+</ul>
+<h2 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h2><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6854573208646090765">https://juejin.cn/post/6854573208646090765</a></p>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          打赏
+        </div>
+      </div>
+      
+    </div>
+    
 
     <!-- copyright -->
     
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
     <footer class="article-footer">
        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%8A%82%E6%B5%81/" rel="tag">节流</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%98%B2%E6%8A%96/" rel="tag">防抖</a></li></ul>
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://zhkaif.github.io/2021/04/07/%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E5%92%8C%E5%8D%95%E5%90%91%E7%BB%91%E5%AE%9A/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%95%E5%90%91%E7%BB%91%E5%AE%9A/" rel="tag">单向绑定</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A/" rel="tag">双向绑定</a></li></ul>
 
     </footer>
   </div>
 
    
+  <nav class="article-nav">
     
+    
+      <a href="/2021/04/07/LeetCode%E5%AD%90%E7%9F%A9%E5%BD%A2%E6%9F%A5%E8%AF%A2/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">LeetCode子矩形查询</div>
+      </a>
+    
+  </nav>
+
   
+   
+   
+<!-- minivaline评论 -->
+<div id="mvcomments-box">
+  <div id="mvcomments"></div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/minivaline@latest"></script>
+<script>
+    new MiniValine(Object.assign({"enable":true,"md":true,"backend":"waline","serverURL":"https://waline.vercel.app"}, {
+	  el: '#mvcomments',
+    }));
+  const infoEle = document.querySelector('#mvcomments .info');
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+      infoEle.childNodes.forEach(function (item) {
+          item.parentNode.removeChild(item);
+      });
+  }
+</script>
+<style>
+	#mvcomments-box {
+		padding: 5px 30px;
+	}
+	@media screen and (max-width: 800px) {
+		#mvcomments-box {
+		  padding: 5px 0px;
+		}
+	}
+	.darkmode .MiniValine *{
+		color: #f1f1f1!important;
+	}
+	.darkmode .commentTrigger{
+		background-color: #403e3e !important;
+	  }
+	.darkmode .MiniValine .vpage .more{
+		background: #21232F
+	}
+	.darkmode img{
+		filter: brightness(30%)
+	}
+	.darkmode .MiniValine .vlist .vcard .vcomment-body .text-wrapper .vcomment.expand:before{
+		background: linear-gradient(180deg, rgba(246,246,246,0), rgba(0,0,0,0.9))
+	}
+	.darkmode .MiniValine .vlist .vcard .vcomment-body .text-wrapper .vcomment.expand:after{
+		background: rgba(0,0,0,0.9)
+	}
+	.darkmode .MiniValine .vlist .vcard .vcomment-body .text-wrapper .vcomment pre{
+		background: #282c34
+		border: 1px solid #282c34
+	}
+	.darkmode .MiniValine .vinputs-area .textarea-wrapper textarea{
+		color: #000;
+	}
+	.darkmode .MiniValine .vinputs-area .auth-section .input-wrapper input{
+		color: #000;
+	}
+	.darkmode .MiniValine .vinputs-area .vextra-area .vsmile-icons{
+		background: transparent;
+	}
+	.darkmode .MiniValine .vinputs-wrap{
+		border-color: #b2b2b5;
+	}
+	.darkmode .MiniValine .vinputs-wrap:hover{
+		border: 1px dashed #2196f3;
+	}
+	.darkmode .MiniValine .vinputs-area .auth-section .input-wrapper{
+		border-bottom: 1px dashed #b2b2b5;
+	}
+	.darkmode .MiniValine .vinputs-area .auth-section .input-wrapper:hover{
+		border-bottom: 1px dashed #2196f3;
+	}
+	.darkmode .MiniValine .vbtn{
+		background-color: transparent!important;
+	}
+	.darkmode .MiniValine .vbtn:hover{
+		border: 1px dashed #2196f3;
+	}
+</style>
+
+    
 </article>
 
-    
-  </article>
-  
-
-  
-  <nav class="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/page/2/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
-  </nav>
-  
 </section>
-</div>
-
       <footer class="footer">
   <div class="outer">
     <ul>
@@ -387,6 +435,23 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">

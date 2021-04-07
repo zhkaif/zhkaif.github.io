@@ -6,7 +6,7 @@
   <link href="https://zhkaif.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhkaif.github.io/"/>
-  <updated>2021-04-07T02:51:51.085Z</updated>
+  <updated>2021-04-07T05:58:20.174Z</updated>
   <id>https://zhkaif.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>双向绑定和单向绑定</title>
+    <link href="https://zhkaif.github.io/2021/04/07/%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E5%92%8C%E5%8D%95%E5%90%91%E7%BB%91%E5%AE%9A/"/>
+    <id>https://zhkaif.github.io/2021/04/07/%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E5%92%8C%E5%8D%95%E5%90%91%E7%BB%91%E5%AE%9A/</id>
+    <published>2021-04-07T05:15:40.000Z</published>
+    <updated>2021-04-07T05:58:20.174Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;数据绑定&quot;&gt;&lt;a href=&quot;#数据绑定&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="https://zhkaif.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="Vue" scheme="https://zhkaif.github.io/categories/%E5%89%8D%E7%AB%AF/Vue/"/>
+    
+    
+    <category term="双向绑定" scheme="https://zhkaif.github.io/tags/%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A/"/>
+    
+    <category term="单向绑定" scheme="https://zhkaif.github.io/tags/%E5%8D%95%E5%90%91%E7%BB%91%E5%AE%9A/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode子矩形查询</title>
@@ -541,34 +570,6 @@
     <category term="Utils" scheme="https://zhkaif.github.io/tags/Utils/"/>
     
     <category term="日期解析" scheme="https://zhkaif.github.io/tags/%E6%97%A5%E6%9C%9F%E8%A7%A3%E6%9E%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于我</title>
-    <link href="https://zhkaif.github.io/2021/03/18/about/"/>
-    <id>https://zhkaif.github.io/2021/03/18/about/</id>
-    <published>2021-03-18T09:44:17.000Z</published>
-    <updated>2021-04-06T07:30:19.285Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;个人信息&quot;&gt;&lt;a href=&quot;#个人信息&quot; class=&quot;headerlink&quot; title=&quot;个人信息&quot;&gt;&lt;/a&gt;个人信息&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;张凯/男/1996&lt;/li&gt;
-&lt;li&gt;本科/淮阴工学院（计算机科学与技术专业）&lt;/li&gt;
-&lt;li&gt;工作年限：3</summary>
-        
-      
-    
-    
-    
-    <category term="个人" scheme="https://zhkaif.github.io/categories/%E4%B8%AA%E4%BA%BA/"/>
-    
-    
-    <category term="简历" scheme="https://zhkaif.github.io/tags/%E7%AE%80%E5%8E%86/"/>
     
   </entry>
   
