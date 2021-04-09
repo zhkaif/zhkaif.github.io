@@ -245,9 +245,11 @@ def find_repeat_number_five(nums: List[int]) -> int:
 
 #### 效率对比（Python）
 
+```Text
 输入：nums = {2, 3, 1, 0, 2, 5, 3};
 方法一：6600ns （个人笨比解法 😂）
 方法二：4500ns （使用集合 Set）
 方法三：8100ns （先排序再查找 🤗）
 方法四：28300ns （使用临时数组）
 方法五：6600ns （原地置换）
+```
