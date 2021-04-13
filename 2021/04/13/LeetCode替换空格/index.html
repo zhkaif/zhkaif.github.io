@@ -9,7 +9,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    LeetCode二维数组中的查找 |  于北往南 Blog&#39;s
+    LeetCode替换空格 |  于北往南 Blog&#39;s
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -41,7 +41,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-LeetCode二维数组中的查找"
+  id="post-LeetCode替换空格"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -52,15 +52,15 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  LeetCode二维数组中的查找
+  LeetCode替换空格
 </h1>
  
 
     </header>
      
     <div class="article-meta">
-      <a href="/2021/04/09/LeetCode%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/" class="article-date">
-  <time datetime="2021-04-09T02:03:29.000Z" itemprop="datePublished">2021-04-09</time>
+      <a href="/2021/04/13/LeetCode%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC/" class="article-date">
+  <time datetime="2021-04-13T05:11:11.000Z" itemprop="datePublished">2021-04-13</time>
 </a> 
   <div class="article-category">
     <a class="article-category-link" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a> / <a class="article-category-link" href="/categories/%E5%90%8E%E7%AB%AF/%E7%AE%97%E6%B3%95/">算法</a>
@@ -71,7 +71,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">1.2k</span>
+            <span class="post-count">708</span>
         </span>
     </span>
 
@@ -80,7 +80,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">4 分钟</span>
+            <span class="post-count">3 分钟</span>
         </span>
     </span>
 </div>
@@ -95,33 +95,46 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h2 id="LeetCode-二维数组中的查找"><a href="#LeetCode-二维数组中的查找" class="headerlink" title="LeetCode 二维数组中的查找"></a>LeetCode 二维数组中的查找</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>在一个 n*m 的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增。请完成一个搞笑的函数，输入这样的一个二维数组和一个整数，判断数组中是否含有改整数。</p>
-<p>示例：<br>现有矩阵 matrix 如下：</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  [1,4,7,11,15],</span><br><span class="line">  [2,5,8,12,19],</span><br><span class="line">  [3,6,9,16,22],</span><br><span class="line">  [10,13,14,17,24],</span><br><span class="line">  [18,21,23,26,30]</span><br><span class="line">]</span><br><span class="line">给定target = 5，返回true</span><br><span class="line">给定target = 20，返回false</span><br></pre></td></tr></table></figure>
+  <h2 id="LeetCode-替换空格"><a href="#LeetCode-替换空格" class="headerlink" title="LeetCode 替换空格"></a>LeetCode 替换空格</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>请实现一个函数，把字符串 s 中的每个空格替换成”%20”。</p>
+<p>实例 1：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：s = &quot;We are happy.&quot;</span><br><span class="line">输出：&quot;We%20are%20happy.&quot;</span><br></pre></td></tr></table></figure>
 
-<h3 id="一得之见（Java-Python）"><a href="#一得之见（Java-Python）" class="headerlink" title="一得之见（Java/Python）"></a>一得之见（Java/Python）</h3><p>双循环求解。<br>时间复杂度：O(nm)，空间复杂度：O(1)</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 在一个 n * m 的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个高效的函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> matrix 二维数组</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> target 整数</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> 二维数组中是否含有该整数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">findNumberInTwoDimenArray</span><span class="params">(<span class="keyword">int</span>[][] matrix, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (matrix == <span class="keyword">null</span> || matrix.length == <span class="number">0</span> || matrix[<span class="number">0</span>].length == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> rows = matrix.length;</span><br><span class="line">    <span class="keyword">int</span> columns = matrix[<span class="number">0</span>].length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; rows; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; columns; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(matrix[i][j] == target)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="一得之见（Java-Python）"><a href="#一得之见（Java-Python）" class="headerlink" title="一得之见（Java/Python）"></a>一得之见（Java/Python）</h3><p>使用 Java 的 replaceAll()方法，直接进行替换</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 把字符串 s 中的每个空格替换成&quot;%20&quot;。</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> s 原字符串</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> 替换后字符串</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">replaceSpace</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> s.replaceAll(<span class="string">&quot; &quot;</span>, <span class="string">&quot;%20&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_number_in_two_dimen_array</span>(<span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">        matrix: List[List[<span class="built_in">int</span>]], target: <span class="built_in">int</span></span>) -&gt; bool:</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    在一个 n * m 的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个高效的函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</span></span><br><span class="line"><span class="string">    :param matrix: 二维数组</span></span><br><span class="line"><span class="string">    :param target: 整数</span></span><br><span class="line"><span class="string">    :return: 二维数组中是否含有该整数</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> matrix <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">or</span> <span class="built_in">len</span>(matrix) == <span class="number">0</span> <span class="keyword">or</span> <span class="built_in">len</span>(matrix[<span class="number">0</span>]) == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(matrix)):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(matrix[<span class="number">0</span>])):</span><br><span class="line">                <span class="keyword">if</span> matrix[i][j] == target:</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+<p>使用 Python 的 replace()方法，直接进行替换</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">replace_space</span>(<span class="params">s: <span class="built_in">str</span></span>) -&gt; str:</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    把字符串 s 中的每个空格替换成&quot;%20&quot;。</span></span><br><span class="line"><span class="string">    :param s: 原字符串</span></span><br><span class="line"><span class="string">    :return: 替换后字符串</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> s.replace(<span class="string">&quot; &quot;</span>, <span class="string">&quot;%20&quot;</span>)</span><br></pre></td></tr></table></figure>
 
-<h3 id="他山之石（Java-Python）"><a href="#他山之石（Java-Python）" class="headerlink" title="他山之石（Java/Python）"></a>他山之石（Java/Python）</h3><p>由于给定的二维数组具备每行从左到右递增以及每列从上到下递增的特点，当访问到一个元素时，可以排除数组中的部分元素。<br>从二维数组的右上角开始查找。如果当前元素等于目标值，则返回 true。如果当前元素大于目标值，则移到左边一列。如果当前元素小于目标值，则移到下边一行。<br>可以证明这种方法不会错过目标值。如果当前元素大于目标值，说明当前元素的下边的所有元素都一定大于目标值，因此往下查找不可能找到目标值，往左查找可能找到目标值。如果当前元素小于目标值，说明当前元素的左边的所有元素都一定小于目标值，因为往左查找不可能找到目标值，往下查找可能找到目标值。</p>
+<h3 id="他山之石（Java-Python）"><a href="#他山之石（Java-Python）" class="headerlink" title="他山之石（Java/Python）"></a>他山之石（Java/Python）</h3><p>由于每次替换从 1 个字符变成 3 个字符，使用字符数组课方便进行替换。简历字符数组的长度为 s 的长度的 3 被，这样可保证字符数组可以容纳所有替换后的字符。</p>
 <ul>
-<li>若数组为空，返回 false</li>
-<li>初始化行下标为 0，列下标为二维数组的列数减 1</li>
-<li>重复下列步骤，知道行下标或者列下标超出边界<ul>
-<li>获得当前下标位置的元素 num</li>
-<li>如果 num 和 target 相等，则返回 true</li>
-<li>如果 num 大于 target，列下标减 1</li>
-<li>如果 num 小于 target，行下标加 1</li>
+<li>获得 s 的长度 length</li>
+<li>创建字符数组 array，其长度为 length*3</li>
+<li>初始化 size 为 0，size 表示替换后的字符串的长度</li>
+<li>从左到右遍历字符串 s<ul>
+<li>获得 s 的当前字符 c</li>
+<li>如果字符 c 是空格，则令<code>array[size] = &#39;%&#39;</code>，<code>array[size + 1] = &#39;2&#39;</code>，<code>array[size + 2] = &#39;0&#39;</code>，并将 size 的值加 3</li>
+<li>如果字符 c 不是空格，则令<code>array[size] = c</code>，并将 size 的值加 1 -遍历结束之后，size 的值等于替换后的字符串的长度，从 array 的前 size 个字符创建新字符串，并返回新字符串</li>
 </ul>
 </li>
 </ul>
-<p>时间复杂度：O(n+m)，空间复杂度：O(1)</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 在一个 n * m 的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个高效的函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> matrix 二维数组</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> target 整数</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> 二维数组中是否含有该整数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">findNumberInTwoDimenArrayTwo</span><span class="params">(<span class="keyword">int</span>[][] matrix, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (matrix == <span class="keyword">null</span> || matrix.length == <span class="number">0</span> || matrix[<span class="number">0</span>].length == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> rows = matrix.length;</span><br><span class="line">    <span class="keyword">int</span> columns = matrix[<span class="number">0</span>].length;</span><br><span class="line">    <span class="keyword">int</span> row = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> column = columns - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (row &lt; rows &amp;&amp; column &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> num = matrix[row][column];</span><br><span class="line">        <span class="keyword">if</span> (num == target) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (num &gt; target) &#123;</span><br><span class="line">            column--;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            row++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>时间复杂度：O(n) 空间复杂度：O(n)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 把字符串 s 中的每个空格替换成&quot;%20&quot;。</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> s 原字符串</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> 替换后字符串</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">replaceSpaceTwo</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sLen = s.length();</span><br><span class="line">    <span class="keyword">char</span>[] sArray = <span class="keyword">new</span> <span class="keyword">char</span>[sLen * <span class="number">3</span>];</span><br><span class="line">    <span class="keyword">int</span> size = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; sLen; i++) &#123;</span><br><span class="line">        <span class="keyword">char</span> c = s.charAt(i);</span><br><span class="line">        <span class="keyword">if</span> (c == <span class="string">&#x27; &#x27;</span>) &#123;</span><br><span class="line">            sArray[size++] = <span class="string">&#x27;%&#x27;</span>;</span><br><span class="line">            sArray[size++] = <span class="string">&#x27;2&#x27;</span>;</span><br><span class="line">            sArray[size++] = <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            sArray[size++] = c;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    String newStr = <span class="keyword">new</span> String(sArray, <span class="number">0</span>, size);</span><br><span class="line">    <span class="keyword">return</span> newStr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="效率对比（Java）"><a href="#效率对比（Java）" class="headerlink" title="效率对比（Java）"></a>效率对比（Java）</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">输入： matrix =</span><br><span class="line">  [</span><br><span class="line">    [1, 4, 7, 11, 15],</span><br><span class="line">    [2, 5, 8, 12, 19],</span><br><span class="line">    [3, 6, 9, 16, 22],</span><br><span class="line">    [10, 13, 14, 17, 24],</span><br><span class="line">    [18, 21, 23, 26, 30]</span><br><span class="line">  ]</span><br><span class="line">  target = 5</span><br><span class="line">方法一：2201800ns （个人笨比解法😂）</span><br><span class="line">方法二：8900ns  （线性查找）</span><br></pre></td></tr></table></figure>
+<ul>
+<li>初始化一个 list，记为 res</li>
+<li>遍历列表 s 的每个字符 c：<ul>
+<li>当 c 为空格时：向 res 后添加字符串”%20”</li>
+<li>当 c 不为空格时：向 res 后添加字符串 c</li>
+</ul>
+</li>
+<li>将列表 s 转换为字符串并返回。</li>
+</ul>
+<p>时间复杂度：O(n) 空间复杂度：O(n)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">replace_space_two</span>(<span class="params">s: <span class="built_in">str</span></span>) -&gt; str:</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    把字符串 s 中的每个空格替换成&quot;%20&quot;。</span></span><br><span class="line"><span class="string">    :param s: 原字符串</span></span><br><span class="line"><span class="string">    :return: 替换后字符串</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    res = []</span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> s:</span><br><span class="line">        <span class="keyword">if</span> c == <span class="string">&#x27; &#x27;</span>:</span><br><span class="line">            res.append(<span class="string">&quot;%20&quot;</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            res.append(c)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&quot;</span>.join(res)</span><br></pre></td></tr></table></figure>
 
-<h3 id="效率对比（Python）"><a href="#效率对比（Python）" class="headerlink" title="效率对比（Python）"></a>效率对比（Python）</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">输入： matrix =</span><br><span class="line">  [</span><br><span class="line">    [1, 4, 7, 11, 15],</span><br><span class="line">    [2, 5, 8, 12, 19],</span><br><span class="line">    [3, 6, 9, 16, 22],</span><br><span class="line">    [10, 13, 14, 17, 24],</span><br><span class="line">    [18, 21, 23, 26, 30]</span><br><span class="line">  ]</span><br><span class="line">  target = 5</span><br><span class="line">方法一：11000ns （个人笨比解法😂）</span><br><span class="line">方法二：5900ns （线性查找）</span><br></pre></td></tr></table></figure>
+<h3 id="效率对比（Java）"><a href="#效率对比（Java）" class="headerlink" title="效率对比（Java）"></a>效率对比（Java）</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：&quot;We are happy&quot;</span><br><span class="line">方法一：3575700ns</span><br><span class="line">方法二：338300ns</span><br></pre></td></tr></table></figure>
+
+<h3 id="效率对比（Python）"><a href="#效率对比（Python）" class="headerlink" title="效率对比（Python）"></a>效率对比（Python）</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：&quot;We are happy&quot;</span><br><span class="line">方法一：3300ns</span><br><span class="line">方法二：7600ns</span><br></pre></td></tr></table></figure>
  
       <!-- reward -->
       
@@ -192,7 +205,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://zhkaif.github.io/2021/04/09/LeetCode%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://zhkaif.github.io/2021/04/13/LeetCode%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -205,19 +218,10 @@
    
   <nav class="article-nav">
     
-      <a href="/2021/04/13/LeetCode%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            LeetCode替换空格
-          
-        </div>
-      </a>
     
-    
-      <a href="/2021/04/08/%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BE%93%E5%85%A5URL%E5%9B%9E%E8%BD%A6%E4%B9%8B%E5%90%8E%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88%EF%BC%9F/" class="article-nav-link">
+      <a href="/2021/04/09/LeetCode%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">在浏览器输入URL回车之后发生了什么？</div>
+        <div class="article-nav-title">LeetCode二维数组中的查找</div>
       </a>
     
   </nav>
