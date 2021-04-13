@@ -123,7 +123,7 @@ def find_number_in_two_dimen_array(
     }
 ```
 
-#### 效率对比（Java）
+### 效率对比（Java）
 
 ```Text
 输入： matrix =
@@ -139,7 +139,7 @@ def find_number_in_two_dimen_array(
 方法二：8900ns  （线性查找）
 ```
 
-#### 效率对比（Python）
+### 效率对比（Python）
 
 ```Text
 输入： matrix =
