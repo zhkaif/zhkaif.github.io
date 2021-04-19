@@ -6,7 +6,7 @@
   <link href="https://zhkaif.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhkaif.github.io/"/>
-  <updated>2021-04-14T09:09:13.814Z</updated>
+  <updated>2021-04-19T02:28:15.748Z</updated>
   <id>https://zhkaif.github.io/</id>
   
   <author>
@@ -17,11 +17,90 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>抽象类和接口</title>
+    <link href="https://zhkaif.github.io/2021/04/19/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3/"/>
+    <id>https://zhkaif.github.io/2021/04/19/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3/</id>
+    <published>2021-04-19T01:21:40.000Z</published>
+    <updated>2021-04-19T02:28:15.748Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;抽象类和接口&quot;&gt;&lt;a href=&quot;#抽象类和接口&quot; class=&quot;headerlink&quot; title=&quot;抽象类和接口&quot;&gt;&lt;/a&gt;抽象类和接口&lt;/h2&gt;&lt;h3 id=&quot;抽象类和接口的区别&quot;&gt;&lt;a href=&quot;#抽象类和接口的区别&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="接口" scheme="https://zhkaif.github.io/tags/%E6%8E%A5%E5%8F%A3/"/>
+    
+    <category term="抽象类" scheme="https://zhkaif.github.io/tags/%E6%8A%BD%E8%B1%A1%E7%B1%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode重建二叉树</title>
+    <link href="https://zhkaif.github.io/2021/04/19/LeetCode%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    <id>https://zhkaif.github.io/2021/04/19/LeetCode%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/</id>
+    <published>2021-04-19T01:12:27.000Z</published>
+    <updated>2021-04-19T06:07:25.163Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;LeetCode-重建二叉树&quot;&gt;&lt;a href=&quot;#LeetCode-重建二叉树&quot; class=&quot;headerlink&quot; title=&quot;LeetCode 重建二叉树&quot;&gt;&lt;/a&gt;LeetCode 重建二叉树&lt;/h2&gt;&lt;h3 id=&quot;题目描述&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="后端" scheme="https://zhkaif.github.io/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    <category term="算法" scheme="https://zhkaif.github.io/categories/%E5%90%8E%E7%AB%AF/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="LeetCode" scheme="https://zhkaif.github.io/tags/LeetCode/"/>
+    
+    <category term="二叉树" scheme="https://zhkaif.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AOP 相关</title>
+    <link href="https://zhkaif.github.io/2021/04/16/AOP%E7%9B%B8%E5%85%B3/"/>
+    <id>https://zhkaif.github.io/2021/04/16/AOP%E7%9B%B8%E5%85%B3/</id>
+    <published>2021-04-16T05:22:56.000Z</published>
+    <updated>2021-04-19T01:22:26.917Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;AOP-相关&quot;&gt;&lt;a href=&quot;#AOP-相关&quot; class=&quot;headerlink&quot; title=&quot;AOP 相关&quot;&gt;&lt;/a&gt;AOP 相关&lt;/h2&gt;&lt;h3 id=&quot;描述一下-Spring-AOP&quot;&gt;&lt;a href=&quot;#描述一下-Spring-AOP&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="AOP" scheme="https://zhkaif.github.io/tags/AOP/"/>
+    
+    <category term="SpringBoot" scheme="https://zhkaif.github.io/tags/SpringBoot/"/>
+    
+  </entry>
+  
+  <entry>
     <title>LeetCode从尾到头打印链表</title>
     <link href="https://zhkaif.github.io/2021/04/14/LeetCode%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/"/>
     <id>https://zhkaif.github.io/2021/04/14/LeetCode%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/</id>
     <published>2021-04-14T01:40:29.000Z</published>
-    <updated>2021-04-14T09:09:13.814Z</updated>
+    <updated>2021-04-19T01:14:14.681Z</updated>
     
     
       
@@ -41,7 +120,7 @@
     
     <category term="LeetCode" scheme="https://zhkaif.github.io/tags/LeetCode/"/>
     
-    <category term="数组" scheme="https://zhkaif.github.io/tags/%E6%95%B0%E7%BB%84/"/>
+    <category term="链表" scheme="https://zhkaif.github.io/tags/%E9%93%BE%E8%A1%A8/"/>
     
   </entry>
   
@@ -68,9 +147,9 @@
     <category term="算法" scheme="https://zhkaif.github.io/categories/%E5%90%8E%E7%AB%AF/%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="LeetCode" scheme="https://zhkaif.github.io/tags/LeetCode/"/>
-    
     <category term="数组" scheme="https://zhkaif.github.io/tags/%E6%95%B0%E7%BB%84/"/>
+    
+    <category term="LeetCode" scheme="https://zhkaif.github.io/tags/LeetCode/"/>
     
   </entry>
   
@@ -97,9 +176,9 @@
     <category term="算法" scheme="https://zhkaif.github.io/categories/%E5%90%8E%E7%AB%AF/%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="LeetCode" scheme="https://zhkaif.github.io/tags/LeetCode/"/>
-    
     <category term="数组" scheme="https://zhkaif.github.io/tags/%E6%95%B0%E7%BB%84/"/>
+    
+    <category term="LeetCode" scheme="https://zhkaif.github.io/tags/LeetCode/"/>
     
   </entry>
   
@@ -154,9 +233,9 @@
     <category term="算法" scheme="https://zhkaif.github.io/categories/%E5%90%8E%E7%AB%AF/%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="LeetCode" scheme="https://zhkaif.github.io/tags/LeetCode/"/>
-    
     <category term="数组" scheme="https://zhkaif.github.io/tags/%E6%95%B0%E7%BB%84/"/>
+    
+    <category term="LeetCode" scheme="https://zhkaif.github.io/tags/LeetCode/"/>
     
   </entry>
   
@@ -212,9 +291,9 @@
     <category term="算法" scheme="https://zhkaif.github.io/categories/%E5%90%8E%E7%AB%AF/%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="LeetCode" scheme="https://zhkaif.github.io/tags/LeetCode/"/>
-    
     <category term="数组" scheme="https://zhkaif.github.io/tags/%E6%95%B0%E7%BB%84/"/>
+    
+    <category term="LeetCode" scheme="https://zhkaif.github.io/tags/LeetCode/"/>
     
   </entry>
   
@@ -241,9 +320,9 @@
     <category term="算法" scheme="https://zhkaif.github.io/categories/%E5%90%8E%E7%AB%AF/%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="LeetCode" scheme="https://zhkaif.github.io/tags/LeetCode/"/>
-    
     <category term="数组" scheme="https://zhkaif.github.io/tags/%E6%95%B0%E7%BB%84/"/>
+    
+    <category term="LeetCode" scheme="https://zhkaif.github.io/tags/LeetCode/"/>
     
   </entry>
   
@@ -297,9 +376,9 @@
     <category term="算法" scheme="https://zhkaif.github.io/categories/%E5%90%8E%E7%AB%AF/%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="LeetCode" scheme="https://zhkaif.github.io/tags/LeetCode/"/>
-    
     <category term="数组" scheme="https://zhkaif.github.io/tags/%E6%95%B0%E7%BB%84/"/>
+    
+    <category term="LeetCode" scheme="https://zhkaif.github.io/tags/LeetCode/"/>
     
   </entry>
   
@@ -353,9 +432,9 @@
     <category term="算法" scheme="https://zhkaif.github.io/categories/%E5%90%8E%E7%AB%AF/%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="LeetCode" scheme="https://zhkaif.github.io/tags/LeetCode/"/>
-    
     <category term="数组" scheme="https://zhkaif.github.io/tags/%E6%95%B0%E7%BB%84/"/>
+    
+    <category term="LeetCode" scheme="https://zhkaif.github.io/tags/LeetCode/"/>
     
   </entry>
   
@@ -395,9 +474,9 @@
     <category term="算法" scheme="https://zhkaif.github.io/categories/%E5%90%8E%E7%AB%AF/%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="LeetCode" scheme="https://zhkaif.github.io/tags/LeetCode/"/>
-    
     <category term="数组" scheme="https://zhkaif.github.io/tags/%E6%95%B0%E7%BB%84/"/>
+    
+    <category term="LeetCode" scheme="https://zhkaif.github.io/tags/LeetCode/"/>
     
   </entry>
   
@@ -424,9 +503,9 @@
     <category term="算法" scheme="https://zhkaif.github.io/categories/%E5%90%8E%E7%AB%AF/%E7%AE%97%E6%B3%95/"/>
     
     
-    <category term="LeetCode" scheme="https://zhkaif.github.io/tags/LeetCode/"/>
-    
     <category term="数组" scheme="https://zhkaif.github.io/tags/%E6%95%B0%E7%BB%84/"/>
+    
+    <category term="LeetCode" scheme="https://zhkaif.github.io/tags/LeetCode/"/>
     
   </entry>
   
@@ -483,92 +562,6 @@
     
     
     <category term="IO模型" scheme="https://zhkaif.github.io/tags/IO%E6%A8%A1%E5%9E%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Windows端口被占用解决方法</title>
-    <link href="https://zhkaif.github.io/2021/03/19/Windows%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
-    <id>https://zhkaif.github.io/2021/03/19/Windows%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</id>
-    <published>2021-03-19T05:40:56.000Z</published>
-    <updated>2021-03-19T07:21:06.669Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Error-场景&quot;&gt;&lt;a href=&quot;#Error-场景&quot; class=&quot;headerlink&quot; title=&quot;Error 场景&quot;&gt;&lt;/a&gt;Error 场景&lt;/h2&gt;&lt;p&gt;启动 Java 项目失败，控制台显示&lt;/p&gt;
-&lt;figure</summary>
-        
-      
-    
-    
-    
-    <category term="操作系统" scheme="https://zhkaif.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    <category term="Windows" scheme="https://zhkaif.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Windows/"/>
-    
-    
-    <category term="端口占用" scheme="https://zhkaif.github.io/tags/%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AutoUpdater自动更新客户端</title>
-    <link href="https://zhkaif.github.io/2021/03/19/AutoUpdater%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E5%AE%A2%E6%88%B7%E7%AB%AF/"/>
-    <id>https://zhkaif.github.io/2021/03/19/AutoUpdater%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E5%AE%A2%E6%88%B7%E7%AB%AF/</id>
-    <published>2021-03-19T03:11:06.000Z</published>
-    <updated>2021-03-25T07:42:39.401Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;安装-NuGet-包&quot;&gt;&lt;a href=&quot;#安装-NuGet-包&quot; class=&quot;headerlink&quot; title=&quot;安装 NuGet 包&quot;&gt;&lt;/a&gt;安装 NuGet 包&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;在Visio</summary>
-        
-      
-    
-    
-    
-    <category term=".Net" scheme="https://zhkaif.github.io/categories/Net/"/>
-    
-    <category term="Winform" scheme="https://zhkaif.github.io/categories/Net/Winform/"/>
-    
-    
-    <category term="AutoUpdater" scheme="https://zhkaif.github.io/tags/AutoUpdater/"/>
-    
-    <category term="客户端" scheme="https://zhkaif.github.io/tags/%E5%AE%A2%E6%88%B7%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CefSharp创建客户端</title>
-    <link href="https://zhkaif.github.io/2021/03/19/CefSharp%E5%88%9B%E5%BB%BA%E5%AE%A2%E6%88%B7%E7%AB%AF/"/>
-    <id>https://zhkaif.github.io/2021/03/19/CefSharp%E5%88%9B%E5%BB%BA%E5%AE%A2%E6%88%B7%E7%AB%AF/</id>
-    <published>2021-03-19T03:10:53.000Z</published>
-    <updated>2021-03-25T07:42:52.871Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;安装-NuGet-包&quot;&gt;&lt;a href=&quot;#安装-NuGet-包&quot; class=&quot;headerlink&quot; title=&quot;安装 NuGet 包&quot;&gt;&lt;/a&gt;安装 NuGet 包&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;在Visio</summary>
-        
-      
-    
-    
-    
-    <category term=".Net" scheme="https://zhkaif.github.io/categories/Net/"/>
-    
-    <category term="Winform" scheme="https://zhkaif.github.io/categories/Net/Winform/"/>
-    
-    
-    <category term="客户端" scheme="https://zhkaif.github.io/tags/%E5%AE%A2%E6%88%B7%E7%AB%AF/"/>
-    
-    <category term="CefSharp" scheme="https://zhkaif.github.io/tags/CefSharp/"/>
     
   </entry>
   

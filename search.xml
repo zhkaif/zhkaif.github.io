@@ -1,6 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>抽象类和接口</title>
+    <url>/2021/04/19/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3/</url>
+    <content><![CDATA[<h2 id="抽象类和接口"><a href="#抽象类和接口" class="headerlink" title="抽象类和接口"></a>抽象类和接口</h2><h3 id="抽象类和接口的区别"><a href="#抽象类和接口的区别" class="headerlink" title="抽象类和接口的区别"></a>抽象类和接口的区别</h3><h4 id="设计目的"><a href="#设计目的" class="headerlink" title="设计目的"></a>设计目的</h4><p>接口：<br>接口设计的目的，是对类的行为进行约束（更准确的说是一种“有”约束，因为接口不能规定类不可以有什么行为），也就是提供一种机制，可以强制要求不同的类具有相同的行为。它只约束了行为的有无，但不对如何实现行为进行限制。<br>抽象类：<br>代码复用，当不同的类具有某些相同的行为（记为行为集合 A），且其中一部分行为的实现方式一致时（A 的非真子集，记为 B），可以让这些类都派生于一个抽象类。在这个抽象类中实现了 B，避免让所有的子类来实现 B，这就达到了代码复用的目的。而 A 减 B 的部分，留给各个子类自己实现。正是因为 A-B 在这里没有实现，所以抽象类不允许实例化出来（否则当 A 调用到 B 时，无法执行）。</p>
+<h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><p>共同点：</p>
+<ul>
+<li>都是上层的抽象类。</li>
+<li>都不能被实例化。</li>
+<li>都能包含抽象的方法，这些抽象的方法用于描述类具备的功能，但是不必提供具体的实现。</li>
+</ul>
+<p>区别：</p>
+<ul>
+<li>在抽象类中可以写非抽象的方法，从而避免在子类中重复写他们，这样可以提高代码的复用性，这是抽象类的优势；接口中只能有抽象的方法。</li>
+<li>一个类只能继承一个直接父类，这个父类可以是具体的类也可是抽象类；但是一个类可以实现多个接口。</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>接口</tag>
+        <tag>抽象类</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode重建二叉树</title>
+    <url>/2021/04/19/LeetCode%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
+    <content><![CDATA[<h2 id="LeetCode-重建二叉树"><a href="#LeetCode-重建二叉树" class="headerlink" title="LeetCode 重建二叉树"></a>LeetCode 重建二叉树</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入某二叉树的前序遍历和中序遍历的结果，请重建该二叉树。假设输入的前序遍历和中序遍历的结果都不含重复的数字。</p>
+<p>例如，给出</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">前序遍历 preorder = [3,9,20,15,7]</span><br><span class="line">中序遍历 inorder = [9,3,15,20,7]</span><br></pre></td></tr></table></figure>
+
+<p>返回如下的二叉树：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">  3</span><br><span class="line"> / \</span><br><span class="line">9  20</span><br><span class="line">  /  \</span><br><span class="line"> 15   7</span><br></pre></td></tr></table></figure>
+
+<h3 id="二叉树学习"><a href="#二叉树学习" class="headerlink" title="二叉树学习"></a>二叉树学习</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p><img src="https://img.imgdb.cn/item/607cf0578322e6675c87bdef.jpg" alt="avatar"></p>
+<p>二叉树的意思就是说：每个节点不能有多于两个儿子，上面的图就是一颗二叉树。</p>
+<ul>
+<li>一颗树至少会有一个节点（根节点）</li>
+<li>树由节点组成，每个节点的数据结构是这样的：<br><img src="https://img.imgdb.cn/item/607cf0e88322e6675c88bc5f.jpg" alt="avatar"></li>
+<li>因此，我们定义树的时候往往是**-&gt;定义节点-&gt;节点连接起来就成了树**，而节点的定义就是：一个数据、两个指针（如果有节点就指向节点，没有节点就指向 null）</li>
+</ul>
+<h4 id="静态创建二叉树"><a href="#静态创建二叉树" class="headerlink" title="静态创建二叉树"></a>静态创建二叉树</h4><p>创建树实际上就是创建节点，然后连接节点</p>
+<p>定义</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> lombok.Data;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> zhkai</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 左节点（儿子）</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> TreeNode leftTreeNode;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 右节点（儿子）</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> TreeNode rightNode;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 数据</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> value;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">TreeNode</span><span class="params">(<span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.value = value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>创建连接</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cn.com.liandisys.derc.TreeNode.TreeNode;</span><br><span class="line"><span class="keyword">import</span> org.apache.log4j.Logger;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> zhkai</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2021年3月22日11:23:08</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Logger logger = Logger.getLogger(App.class);</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="comment">// 根节点--&gt;10</span></span><br><span class="line">        TreeNode treeNode1 = <span class="keyword">new</span> TreeNode(<span class="number">10</span>);</span><br><span class="line">        <span class="comment">// 左孩子--&gt;9</span></span><br><span class="line">        TreeNode treeNode2 = <span class="keyword">new</span> TreeNode(<span class="number">9</span>);</span><br><span class="line">        <span class="comment">// 右孩子--&gt;20</span></span><br><span class="line">        TreeNode treeNode3 = <span class="keyword">new</span> TreeNode(<span class="number">20</span>);</span><br><span class="line">        <span class="comment">// 20的左孩子--&gt;15</span></span><br><span class="line">        TreeNode treeNode4 = <span class="keyword">new</span> TreeNode(<span class="number">15</span>);</span><br><span class="line">        <span class="comment">// 20的右孩子--&gt;35</span></span><br><span class="line">        TreeNode treeNode5 = <span class="keyword">new</span> TreeNode(<span class="number">35</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 根节点的左右孩子</span></span><br><span class="line">        treeNode1.setLeftTreeNode(treeNode2);</span><br><span class="line">        treeNode1.setRightNode(treeNode3);</span><br><span class="line">        <span class="comment">// 20节点的左右孩子</span></span><br><span class="line">        treeNode3.setLeftTreeNode(treeNode4);</span><br><span class="line">        treeNode3.setRightNode(treeNode5);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="遍历二叉树"><a href="#遍历二叉树" class="headerlink" title="遍历二叉树"></a>遍历二叉树</h4><p>三种遍历方式</p>
+<ul>
+<li>先序遍历<ul>
+<li>先访问根节点，然后访问左节点，最后访问右节点。</li>
+</ul>
+</li>
+<li>中序遍历<ul>
+<li>先访问左节点，然后访问根节点，最后访问右节点。</li>
+</ul>
+</li>
+<li>后序遍历<ul>
+<li>先访问左节点，然后访问右节点，最后访问根节点。</li>
+</ul>
+</li>
+</ul>
+<h3 id="一得之见（Java-Python）"><a href="#一得之见（Java-Python）" class="headerlink" title="一得之见（Java/Python）"></a>一得之见（Java/Python）</h3><p>暂无</p>
+<h3 id="他山之石（Java-Python）"><a href="#他山之石（Java-Python）" class="headerlink" title="他山之石（Java/Python）"></a>他山之石（Java/Python）</h3><p>暂无</p>
+]]></content>
+      <categories>
+        <category>后端</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>二叉树</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AOP 相关</title>
+    <url>/2021/04/16/AOP%E7%9B%B8%E5%85%B3/</url>
+    <content><![CDATA[<h2 id="AOP-相关"><a href="#AOP-相关" class="headerlink" title="AOP 相关"></a>AOP 相关</h2><h3 id="描述一下-Spring-AOP"><a href="#描述一下-Spring-AOP" class="headerlink" title="描述一下 Spring AOP"></a>描述一下 Spring AOP</h3><p>面向切面编程，OOP（面向对象编程）的补充。利用 AOP 可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。</p>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p>日志记录，性能统计，安全控制，权限管理，事务处理，异常处理，资源池管理。</p>
+<h3 id="相关术语"><a href="#相关术语" class="headerlink" title="相关术语"></a>相关术语</h3><h4 id="切面（Aspect）"><a href="#切面（Aspect）" class="headerlink" title="切面（Aspect）"></a>切面（Aspect）</h4><p>首先要理解<code>切</code>字，需要把对象想象成一个立方体，传统的面向对象编程思维，类定义完成之后（封装）。每次实例化一个对象，对类定义中成员变量赋值，就相当于对这个立方体进行了一个定义，定义完成之后，那个对象就在那里，等着被使用，等着被回收。</p>
+<p>面向切面编程则是指，对于我们已经封装好的类，我们可以在编译期间或在运行期间，对其进行切割，把立方体切开，在原有的方法里面添加（织入）一些新的代码，对原有的方法代码进行一次增强处理。而那些增强部分的代码，就被称之为切面。</p>
+<h4 id="切入点（PointCut）"><a href="#切入点（PointCut）" class="headerlink" title="切入点（PointCut）"></a>切入点（PointCut）</h4><p>要对哪些类中的哪些方法进行增强，进行切割，指的是被增强的方法。即要切哪些东西。</p>
+<h4 id="连接点（JoinPoint）"><a href="#连接点（JoinPoint）" class="headerlink" title="连接点（JoinPoint）"></a>连接点（JoinPoint）</h4><p>我们知道了要切入哪些方法后，剩下的就是什么时候切，在原方法的哪一个执行阶段加入增加代码，这个就是连接点。如方法调用前，方法调用后，发生异常时等等。</p>
+<h4 id="通知（Advice）"><a href="#通知（Advice）" class="headerlink" title="通知（Advice）"></a>通知（Advice）</h4><p>通知被织入方法，该如何被增强。定义切面的具体实现。那么这里面就涉及到一个问题，空间（切哪里）和时间（什么时候切），空间我们已经知道了就是切入点中定义的方法，而什么时候切，则是连接点的概念。</p>
+<h4 id="目标对象（Target-Object）"><a href="#目标对象（Target-Object）" class="headerlink" title="目标对象（Target Object）"></a>目标对象（Target Object）</h4><p>被一个或多个切面所通知的对象，即为目标对象。</p>
+<h4 id="AOP-代理对象（AOP-Proxy-Object）"><a href="#AOP-代理对象（AOP-Proxy-Object）" class="headerlink" title="AOP 代理对象（AOP Proxy Object）"></a>AOP 代理对象（AOP Proxy Object）</h4><p>AOP 代理是 AOP 框架所生成的对象，该对象是目标对象的代理对象。代理对象能够在目标对象的基础上，在相应的连接点上调用通知。</p>
+<h4 id="织入（Weaving）"><a href="#织入（Weaving）" class="headerlink" title="织入（Weaving）"></a>织入（Weaving）</h4><p>将切面切入到目标方法之中，是目标方法得到增强的过程被称之为织入。</p>
+<h2 id="SpringBoot-的起步依赖"><a href="#SpringBoot-的起步依赖" class="headerlink" title="SpringBoot 的起步依赖"></a>SpringBoot 的起步依赖</h2><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.4.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">relativePath</span>/&gt;</span> <span class="comment">&lt;!-- lookup parent from repository --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>AOP</tag>
+        <tag>SpringBoot</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode从尾到头打印链表</title>
     <url>/2021/04/14/LeetCode%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/</url>
     <content><![CDATA[<h2 id="LeetCode-从头到尾打印链表"><a href="#LeetCode-从头到尾打印链表" class="headerlink" title="LeetCode 从头到尾打印链表"></a>LeetCode 从头到尾打印链表</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入一个链表头节点，从尾到头反过来返回每个节点的值（用数组返回）。</p>
@@ -59,7 +151,7 @@
       </categories>
       <tags>
         <tag>LeetCode</tag>
-        <tag>数组</tag>
+        <tag>链表</tag>
       </tags>
   </entry>
   <entry>
@@ -111,8 +203,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>数组</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -151,8 +243,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>数组</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -213,8 +305,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>数组</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -275,8 +367,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>数组</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -309,8 +401,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>数组</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -432,8 +524,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>数组</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -484,8 +576,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>数组</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -515,8 +607,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>数组</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -539,8 +631,8 @@
         <category>算法</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>数组</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -1083,7 +1175,7 @@
 </ul>
 <h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
 <li>手机：13182353591</li>
-<li>邮箱：<a href="mailto:&#50;&#x35;&#x37;&#x32;&#52;&#x32;&#x39;&#x32;&#x33;&#x35;&#64;&#113;&#113;&#x2e;&#x63;&#x6f;&#x6d;">&#50;&#x35;&#x37;&#x32;&#52;&#x32;&#x39;&#x32;&#x33;&#x35;&#64;&#113;&#113;&#x2e;&#x63;&#x6f;&#x6d;</a></li>
+<li>邮箱：<a href="mailto:&#x32;&#53;&#55;&#x32;&#52;&#50;&#57;&#50;&#x33;&#53;&#x40;&#x71;&#113;&#x2e;&#99;&#111;&#109;">&#x32;&#53;&#55;&#x32;&#52;&#50;&#57;&#50;&#x33;&#53;&#x40;&#x71;&#113;&#x2e;&#99;&#111;&#109;</a></li>
 <li>QQ/微信手机号：2572429235/13182353591</li>
 </ul>
 <h2 id="工作经历"><a href="#工作经历" class="headerlink" title="工作经历"></a>工作经历</h2><p>南京联迪信息股份有限公司（2018 年 6 月~至今）</p>
@@ -1145,7 +1237,7 @@
 </ul>
 <h2 id="技能清单"><a href="#技能清单" class="headerlink" title="技能清单"></a>技能清单</h2><ul>
 <li>开发语言：Java/C#/Python</li>
-<li>前端技术：Vue/Element-ui/Vant/Echarts</li>
+<li>前端技术：Vue/Element-ui/Vant/Echar</li>
 <li>数据库相关：MySQL/SQLSERVER/MongoDB/ES</li>
 <li>版本管理：Git/Svn</li>
 <li>单元测试：Junit/Pytest</li>
